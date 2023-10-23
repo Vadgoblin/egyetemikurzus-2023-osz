@@ -13,12 +13,15 @@
             {
                 for (uint x = 0; x < canvas.Width; x++)
                 {
-                    double distance = Math.Sqrt(Math.Pow(x - X, 2) + Math.Pow(y - Y, 2));
+                    double distance = Math.Sqrt(Math.Pow(X - (int)x, 2) + Math.Pow(Y - (int)y, 2));
                     if (distance < Radius)
                     {
+                        //Console.Write("X");
                         canvas[x, y] = Color;
                     }
+                    //else Console.Write(" ");
                 }
+                //Console.WriteLine();
             }
         }
     }

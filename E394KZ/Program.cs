@@ -10,11 +10,11 @@ class Program
     {
         var canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
 
-        var dot = new Dot("pont",10,12,ConsoleColor.Blue);
-        dot.Draw(canvas);
-
-        var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 7);
+        var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 8);
         circle.Draw(canvas);
+
+        var dot = new Dot("pont", 10, 12, ConsoleColor.Blue);
+        dot.Draw(canvas);
 
         //var defaultbackgdoundcolor = Console.BackgroundColor;
         //Fill(canvas, ConsoleColor.DarkGray);

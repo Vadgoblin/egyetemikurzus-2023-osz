@@ -2,19 +2,19 @@
 {
     internal abstract record BaseShape
     {
-        public string name { get; init; }
+        public string Name { get; init; }
 
-        public uint x { get; init; }
-        public uint y { get; init; }
+        public uint X { get; init; }
+        public uint Y { get; init; }
 
-        public ConsoleColor color { get; init; }
+        public ConsoleColor Color { get; init; }
 
         public BaseShape(string name, uint x, uint y, ConsoleColor color)
         {
-            this.name = name;
-            this.x = x;
-            this.y = y;
-            this.color = color;
+            Name = name;
+            X = x;
+            Y = y;
+            Color = color;
         }
 
         public abstract void Draw(Canvas canvas);

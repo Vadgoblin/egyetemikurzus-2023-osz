@@ -7,7 +7,7 @@
         }
         public override void Draw(Canvas canvas)
         {
-            canvas[x, y] = color;
+            canvas[X, Y] = Color;
         }
     }
 }

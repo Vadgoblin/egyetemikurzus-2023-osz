@@ -2,14 +2,24 @@
 {
     internal record Circle : BaseShape
     {
-        public uint radius { get; init; }
+        public uint Radius { get; init; }
         public Circle(string name, uint x, uint y, ConsoleColor color, uint radius) : base(name, x, y, color)
         {
-            this.radius = radius;
+            Radius = radius;
         }
         public override void Draw(Canvas canvas)
         {
-            canvas[x, y] = color;
+            for (uint y = 0; y < canvas.Height; y++)
+            {
+                for (uint x = 0; x < canvas.Width; x++)
+                {
+                    double distance = Math.Sqrt(Math.Pow(x - X, 2) + Math.Pow(y - Y, 2));
+                    if (distance < Radius)
+                    {
+                        canvas[x, y] = Color;
+                    }
+                }
+            }
         }
     }
 }

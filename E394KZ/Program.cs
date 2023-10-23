@@ -13,30 +13,18 @@ class Program
         var dot = new Dot("pont",10,12,ConsoleColor.Blue);
         dot.Draw(canvas);
 
+        var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 7);
+        circle.Draw(canvas);
+
         //var defaultbackgdoundcolor = Console.BackgroundColor;
         //Fill(canvas, ConsoleColor.DarkGray);
-        DrawCircle(canvas, 4, 4, 10, ConsoleColor.Red);
+        //DrawCircle(canvas, 4, 4, 10, ConsoleColor.Red);
         //canvas[2, 3] = ConsoleColor.White;
         //shape.Draw(canvas);
 
 
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
         Console.ReadLine();
-    }
-
-    static void DrawCircle(Canvas canvas, int centerX, int centerY, int radius, ConsoleColor color)
-    {
-        for (uint y = 0; y < canvas.Height; y++)
-        {
-            for (uint x = 0; x < canvas.Width; x++)
-            {
-                double distance = Math.Sqrt(Math.Pow(x - centerX, 2) + Math.Pow(y - centerY, 2));
-                if (distance < radius)
-                {
-                    canvas[x, y] = color;
-                }
-            }
-        }
     }
 
     static void Fill(ConsoleColor?[,] canvas, ConsoleColor color)

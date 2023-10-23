@@ -9,14 +9,13 @@ class Program
     {
         var canvas = new ConsoleColor?[CANVAS_WIDTH, CANVAS_HEIGHT];
         var shape = new Dot("pont",10,12,ConsoleColor.Blue);
-        shape.test();
        
         var defaultbackgdoundcolor = Console.BackgroundColor;
         Fill(canvas, ConsoleColor.DarkGray);
-        DrawCircle(canvas, 4, 4, 4, ConsoleColor.Red);
+        DrawCircle(canvas, 4, 4, 10, ConsoleColor.Red);
         canvas[2, 3] = ConsoleColor.White;
-        canvas = shape.Draw(canvas);
-        PrintCanvas(canvas, 1, 1, defaultbackgdoundcolor);
+        shape.Draw(canvas);
+        PrintCanvas(canvas, 0, 0, defaultbackgdoundcolor);
 
         Console.ReadLine();
     }

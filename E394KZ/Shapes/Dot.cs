@@ -5,10 +5,9 @@
         public Dot(string name, uint x, uint y, ConsoleColor color) : base(name, x, y,color)
         {
         }
-        public override ConsoleColor?[,] Draw(ConsoleColor?[,] canvas)
+        public override void Draw(ConsoleColor?[,] canvas)
         {
             canvas[x, y] = color;
-            return canvas;
         }
     }
 }

@@ -17,6 +17,6 @@
             this.color = color;
         }
 
-        public abstract ConsoleColor?[,] Draw(ConsoleColor?[,] canvas);
+        public abstract void Draw(ConsoleColor?[,] canvas);
     }
 }

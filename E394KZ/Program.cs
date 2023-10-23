@@ -28,6 +28,13 @@ class Program
                     canvas.Draw(shape);
                     shapeHistory.Add(shape);
                 }
+                else if(input == "undo")
+                {
+                    shapeHistory.RemoveAt(shapeHistory.Count - 1);
+                    ClearLastShapes();
+                    canvas.Clear();
+                    canvas.Draw(shapeHistory);
+                }
 
                 ClearPrompt(input.Length);
             }
@@ -236,6 +243,16 @@ class Program
                 else for (int j = text.Length; j < 24; j++) text += " ";
                 Console.Write(text);
             }
+        }
+    }
+    static void ClearLastShapes()
+    {
+        for (int i = 0; i < Console.WindowHeight - 6; i++)
+        {
+            Console.SetCursorPosition(Console.WindowWidth - 25, 3 + i);
+            var text = "";
+            for (int j = text.Length; j < 24; j++) text += " ";
+            Console.Write(text);
         }
     }
 }

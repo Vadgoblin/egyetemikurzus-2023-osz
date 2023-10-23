@@ -55,5 +55,20 @@ namespace E394KZ
         { 
             shape.Draw(this);
         }
+        public void Draw(List<BaseShape> shapeList)
+        {
+            for(int i = shapeList.Count - 1 ; i >= 0; i--) Draw(shapeList[i]);
+        }
+
+        public void Clear()
+        {
+            for(int i =  0; i < Width; i++)
+            {
+                for(int j = 0; j < Height; j++)
+                {
+                    ColorArray[i,j]= null;
+                }
+            }
+        }
     }
 }

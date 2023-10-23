@@ -8,7 +8,8 @@ class Program
     static void Main(string[] args)
     {
         var canvas = new ConsoleColor?[CANVAS_WIDTH, CANVAS_HEIGHT];
-        BaseShape shape = new Dot("pont",10,12,ConsoleColor.Blue);
+        var shape = new Dot("pont",10,12,ConsoleColor.Blue);
+        shape.test();
        
         var defaultbackgdoundcolor = Console.BackgroundColor;
         Fill(canvas, ConsoleColor.DarkGray);

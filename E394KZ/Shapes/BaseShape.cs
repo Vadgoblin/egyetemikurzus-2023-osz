@@ -1,13 +1,13 @@
 ﻿namespace E394KZ.Shapes
 {
-    internal abstract class BaseShape
+    internal abstract record BaseShape
     {
         public string name { get; init; }
 
-        public uint x { get; private set; }
-        public uint y { get; private set; }
+        public uint x { get; init; }
+        public uint y { get; init; }
 
-        public ConsoleColor color { get; private set; }
+        public ConsoleColor color { get; init; }
 
         public BaseShape(string name, uint x, uint y, ConsoleColor color)
         {

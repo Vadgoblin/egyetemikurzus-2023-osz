@@ -17,6 +17,9 @@ class Program
         var rectangle = new Rectangle("rect", 10, 13, ConsoleColor.Yellow, 6, 5);
         canvas.Draw(rectangle);
 
+        var line = new Line("lineasd", 0, 0, ConsoleColor.Green, 7, 14);
+        line.Draw(canvas);
+
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
         Console.ReadLine();
     }

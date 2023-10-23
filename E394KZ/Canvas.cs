@@ -1,4 +1,6 @@
-﻿namespace E394KZ
+﻿using E394KZ.Shapes;
+
+namespace E394KZ
 {
     internal class Canvas
     {
@@ -47,6 +49,11 @@
                     this[i, j] = color;
                 }
             }
+        }
+
+        public void Draw(BaseShape shape)
+        { 
+            shape.Draw(this);
         }
     }
 }

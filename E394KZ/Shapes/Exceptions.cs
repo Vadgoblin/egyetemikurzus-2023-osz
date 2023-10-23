@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace E394KZ.Shapes
+﻿namespace E394KZ.Shapes
 {
     class InvalidConsoleColorException : Exception
     {
@@ -17,5 +11,10 @@ namespace E394KZ.Shapes
     {
         public InvalidArgumentumCountException(string shapetype,int argcount)
             : base($"Invalid argumentum count({argcount}) for {shapetype}") { }
+    }
+    class InvalidNameException : Exception
+    {
+        public InvalidNameException(string name)
+        : base($"\"{name}\" is invalid name for a shape") { }
     }
 }

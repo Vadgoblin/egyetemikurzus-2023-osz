@@ -18,5 +18,6 @@
         }
 
         public abstract void Draw(Canvas canvas);
+        public abstract string GetShapeName();
     }
 }

@@ -21,5 +21,9 @@
                 }
             }
         }
+        public override string GetShapeName()
+        {
+            return "circle";
+        }
     }
 }

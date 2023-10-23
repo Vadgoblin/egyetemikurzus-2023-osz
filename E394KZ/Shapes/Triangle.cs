@@ -91,5 +91,9 @@ namespace E394KZ.Shapes
             p1 = p2;
             p2 = temp;
         }
+        public override string GetShapeName()
+        {
+            return "triangle";
+        }
     }
 }

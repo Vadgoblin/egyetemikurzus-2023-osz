@@ -45,5 +45,9 @@
                 }
             }
         }
+        public override string GetShapeName()
+        {
+            return "line";
+        }
     }
 }

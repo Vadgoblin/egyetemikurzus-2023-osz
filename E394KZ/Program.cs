@@ -24,7 +24,7 @@ class Program
             {
                 if (StartWidth(input.ToLower(), new string[] { "dot", "line", "circle", "rectangle", "triangle" }))
                 {
-                    var shape = ShapeParser(input);
+                    var shape = ShapeParser(input,shapeHistory);
                     canvas.Draw(shape);
                     shapeHistory.Add(shape);
                 }
@@ -54,8 +54,28 @@ class Program
         }
         return false;
     }
-    static BaseShape ShapeParser(string text)
+    static BaseShape ShapeParser(string text, List<BaseShape> shapeHistory)
     {
+        static string NameChecker(string name)
+        {
+            if(StartWidth(name.ToLower(),new string[] { "dot", "line", "circle", "rectangle", "triangle" }))
+            {
+                var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle","").Replace("rectangle", "").Replace("triangle", "");
+                if (tmp.Length>0 && char.IsDigit(tmp[0]))throw new InvalidNameException(name);
+            }
+            return name;
+        }
+        static string GetAutoName(List<BaseShape> shapeHistory, string shapename)
+        {
+            int countOfThatTypeOfShape = shapeHistory.Count(shape => shape.GetShapeName() == shapename);
+            var name = new String(
+                new[] { char.ToUpper(shapename.First()) }
+                .Concat(shapename.Skip(1))
+                .ToArray()
+            );
+            return $"{name}{countOfThatTypeOfShape+1}";
+        }
+
         var textSplit = text.Split(' ');
 
         uint x;
@@ -70,7 +90,7 @@ class Program
                 x = Convert.ToUInt32(textSplit[1]);
                 y = Convert.ToUInt32(textSplit[2]);
                 color = ConsoleColorParser(textSplit[3]);
-                name = (textSplit.Length == 5) ? textSplit[4] : "";
+                name = (textSplit.Length == 5) ? NameChecker(textSplit[4]) : GetAutoName(shapeHistory,"dot");
                 return new Dot(name,x,y,color);
 
             case "line":
@@ -80,7 +100,7 @@ class Program
                 var x2 = Convert.ToUInt32(textSplit[3]);
                 var y2 = Convert.ToUInt32(textSplit[4]);
                 color = ConsoleColorParser(textSplit[5]);
-                name = (textSplit.Length == 7) ? textSplit[6] : "";
+                name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "line");
                 return new Line(name,x,y,color,x2,y2);
 
             case "rectangle":
@@ -90,7 +110,7 @@ class Program
                 var width = Convert.ToUInt32(textSplit[3]);
                 var height = Convert.ToUInt32(textSplit[4]);
                 color = ConsoleColorParser(textSplit[5]);
-                name = (textSplit.Length == 7) ? textSplit[6] : "";
+                name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "rectangle");
                 return new Rectangle(name,x,y,width,height,color);
 
             case "circle":
@@ -99,7 +119,7 @@ class Program
                 y = Convert.ToUInt32(textSplit[2]);
                 var r = Convert.ToUInt32(textSplit[3]);
                 color = ConsoleColorParser(textSplit[4]);
-                name = (textSplit.Length == 6) ? textSplit[5] : "";
+                name = (textSplit.Length == 6) ? NameChecker(textSplit[5]) : GetAutoName(shapeHistory, "circle");
                 return new Circle(name, x, y, color, r);
 
             case "triangle":
@@ -111,7 +131,7 @@ class Program
                 var v3x = Convert.ToUInt32(textSplit[5]);
                 var v3y = Convert.ToUInt32(textSplit[6]);
                 color = ConsoleColorParser(textSplit[7]);
-                name = (textSplit.Length == 9) ? textSplit[8] : "";
+                name = (textSplit.Length == 9) ? NameChecker(textSplit[8]) : GetAutoName(shapeHistory, "triangle");
                 return new Triangle(name, x, y, color, v2x, v2y, v3x, v3y);
             default:
                 throw new Exception("this should never be called");

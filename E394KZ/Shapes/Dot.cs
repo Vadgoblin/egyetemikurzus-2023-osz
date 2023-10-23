@@ -9,5 +9,9 @@
         {
             canvas[X, Y] = Color;
         }
+        public override string GetShapeName()
+        {
+            return "dot";
+        }
     }
 }

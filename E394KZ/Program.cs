@@ -3,8 +3,6 @@
     const uint CANVAS_WIDTH = 1920;
     const uint CANVAS_HEIGHT = 1080;
 
-    required ConsoleColor BACKGROUND_COLOR;
-
     static void Main(string[] args)
     {
         var canvas = new ConsoleColor?[CANVAS_WIDTH, CANVAS_HEIGHT];

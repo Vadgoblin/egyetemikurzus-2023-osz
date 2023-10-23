@@ -33,6 +33,7 @@ namespace E394KZ.Shapes
             V3X = v3x;
             V3Y = v3y;
         }
+        public Triangle(string name, uint v1x, uint v1y, uint v2x, uint v2y, uint v3x, uint v3y, ConsoleColor color) : this(name, v1x, v1y, color, v2x, v2y, v3x, v3y) { }
 
         public override void Draw(Canvas canvas)
         {

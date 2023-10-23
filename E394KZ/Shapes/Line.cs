@@ -10,6 +10,7 @@
             EndX = endX;
             EndY = endY;
         }
+        public Line(string name, uint x, uint y, uint endX, uint endY, ConsoleColor color):this(name,x,y,color,endX,endY) { }
 
         public override void Draw(Canvas canvas)
         {

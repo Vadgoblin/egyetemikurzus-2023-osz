@@ -14,13 +14,13 @@ class Program
         var dot = new Dot("pont", 10, 12, ConsoleColor.Blue);
         canvas.Draw(dot);
 
-        var rectangle = new Rectangle("rect", 10, 13, ConsoleColor.Yellow, 6, 5);
+        var rectangle = new Rectangle("rect", 10, 13, 6, 5, ConsoleColor.Yellow);
         canvas.Draw(rectangle);
 
-        var line = new Line("lineasd", 0, 0, ConsoleColor.Green, 7, 14);
+        var line = new Line("lineasd", 0, 0, 7, 14, ConsoleColor.Green);
         line.Draw(canvas);
 
-        var triangle = new Triangle("triangle", 10, 0, ConsoleColor.White, 0, 10, 25, 14);
+        var triangle = new Triangle("triangle", 10, 0, 0, 10, 25, 14, ConsoleColor.White);
         triangle.Draw(canvas);
 
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);

@@ -6,7 +6,7 @@ class Program
     static void Main()
     {
         var canvas = new Canvas(1920, 1080);
-        canvas.Fill(ConsoleColor.DarkGray);
+        //canvas.Fill(ConsoleColor.DarkGray);
 
         var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 8);
         canvas.Draw(circle);
@@ -19,6 +19,9 @@ class Program
 
         var line = new Line("lineasd", 0, 0, ConsoleColor.Green, 7, 14);
         line.Draw(canvas);
+
+        var triangle = new Triangle("triangle", 10, 0, ConsoleColor.White, 0, 10, 25, 14);
+        triangle.Draw(canvas);
 
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
         Console.ReadLine();

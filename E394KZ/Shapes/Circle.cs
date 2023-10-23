@@ -7,7 +7,7 @@
         {
             this.radius = radius;
         }
-        public override void Draw(ConsoleColor?[,] canvas)
+        public override void Draw(Canvas canvas)
         {
             canvas[x, y] = color;
         }

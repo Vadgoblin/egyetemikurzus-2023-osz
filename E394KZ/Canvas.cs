@@ -12,7 +12,7 @@
             ColorArray = new ConsoleColor?[width, height];
         }
 
-        public ConsoleColor? this[int row, int column]
+        public ConsoleColor? this[uint row, uint column]
         {
             get
             {

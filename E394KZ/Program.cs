@@ -1,23 +1,22 @@
 ﻿using E394KZ;
 using E394KZ.Shapes;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.OutputEncoding = Encoding.UTF8;
 
         var canvas = new Canvas(1920, 1080);
+        var shapeHistory = new List<BaseShape>();
 
         var lastSize = (Console.WindowWidth, Console.WindowHeight);
         DrawFrame();
         while (true)
         {
-
             DrawCanvas(canvas, 0, 0, Console.BackgroundColor);
+            DrawLastShapes(shapeHistory);
             DrawPrompt();
             var input = Console.ReadLine() ?? "";
 
@@ -25,7 +24,9 @@ class Program
             {
                 if (StartWidth(input.ToLower(), new string[] { "dot", "line", "circle", "rectangle", "triangle" }))
                 {
-                    ShapeParser(input).Draw(canvas);
+                    var shape = ShapeParser(input);
+                    canvas.Draw(shape);
+                    shapeHistory.Add(shape);
                 }
 
                 ClearPrompt(input.Length);
@@ -46,7 +47,7 @@ class Program
         }
         return false;
     }
-    static BaseShape? ShapeParser(string text)
+    static BaseShape ShapeParser(string text)
     {
         var textSplit = text.Split(' ');
 
@@ -162,12 +163,36 @@ class Program
         }
         sb.Append('┫');
         Console.Write(sb);
+
+        Console.SetCursorPosition(Console.WindowWidth-26, 0);
+        Console.Write('┳');
+        for(int i = 1;i<Console.WindowHeight - 3; i++)
+        {
+            Console.SetCursorPosition(Console.WindowWidth - 26, i);
+            Console.Write('┃');
+        }
+        Console.SetCursorPosition(Console.WindowWidth - 26, Console.WindowHeight - 3);
+        Console.Write('┻');
+        Console.SetCursorPosition(Console.WindowWidth - 25, 1);
+        Console.Write("Last shapes:");
+        sb.Clear();
+        sb.Append('┠');
+        for (int i = 0; i < 24; i++) sb.Append('─');
+        sb.Append('┨');
+        Console.SetCursorPosition(Console.WindowWidth - 26, 2);
+        Console.Write(sb.ToString());
     }
     static void DrawPrompt()
     {
         Console.CursorVisible = true;
         Console.SetCursorPosition(1, Console.WindowHeight - 2);
         Console.Write(">");
+    }
+    static void ClearPrompt(int len)
+    {
+        Console.CursorVisible = false;
+        Console.SetCursorPosition(2, Console.WindowHeight - 2);
+        for (uint i = 0; i < len; i++) { Console.Write(" "); }
     }
     static void DrawCanvas(Canvas canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)
     {
@@ -177,7 +202,7 @@ class Program
 
         for (uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
         {
-            for (uint windex = woffset; windex < woffset + Console.WindowWidth-2 && windex < canvas.Height; windex++)
+            for (uint windex = woffset; windex < woffset + Console.WindowWidth-30 && windex < canvas.Height; windex++)
             {
                 var upper = canvas[windex, hindex] ?? backgdoundColor;
                 var lower = canvas[windex, hindex + 1] ?? backgdoundColor;
@@ -198,10 +223,19 @@ class Program
             Console.SetCursorPosition(1, line++);
         }
     }
-    static void ClearPrompt(int len)
+    static void DrawLastShapes(List<BaseShape> shapeHistory)
     {
-        Console.CursorVisible = false;
-        Console.SetCursorPosition(2, Console.WindowHeight - 2);
-        for(uint i = 0; i < len; i++) { Console.Write(" "); }
+        for (int i = 0;i<Console.WindowHeight-6 && i < shapeHistory.Count;i++)
+        {
+            Console.SetCursorPosition(Console.WindowWidth - 25, 3+i);
+            if (i == Console.WindowHeight - 7) Console.Write("...");
+            else
+            {
+                var text = $"{shapeHistory[shapeHistory.Count - 1 - i].Name}";
+                if (text.Length > 24) text = text.Substring(0, 24);
+                else for (int j = text.Length; j < 24; j++) text += " ";
+                Console.Write(text);
+            }
+        }
     }
 }

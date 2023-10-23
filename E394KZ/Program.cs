@@ -1,12 +1,15 @@
 ﻿using E394KZ;
 using E394KZ.Shapes;
+using System.Runtime.CompilerServices;
+using System.Text;
 
 class Program
 {
     static void Main()
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+
         var canvas = new Canvas(1920, 1080);
-        //canvas.Fill(ConsoleColor.DarkGray);
 
         var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 8);
         canvas.Draw(circle);
@@ -23,15 +26,67 @@ class Program
         var triangle = new Triangle("triangle", 10, 0, 0, 10, 25, 14, ConsoleColor.White);
         triangle.Draw(canvas);
 
-        PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
+        DrawFrame();
+        DrawCanvas(canvas, 0, 0, Console.BackgroundColor);
+        DrawPrompt();
         Console.ReadLine();
     }
 
-    static void PrintCanvas(Canvas canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)
+    static void DrawFrame()
     {
-        for (uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 1) * 2 && hindex < canvas.Height; hindex += 2)
+        Console.CursorVisible = false;
+        var sb = new StringBuilder();
+        sb.Append("┏");
+        for (int i = 0; i < Console.WindowWidth - 2; i++)
         {
-            for (uint windex = woffset; windex < woffset + Console.WindowWidth && windex < canvas.Height; windex++)
+            sb.Append('━');
+        }
+        sb.Append('┓');
+        Console.WriteLine(sb);
+        sb.Clear();
+
+        for (int i = 1; i < Console.WindowHeight - 1; i++)
+        {
+            Console.SetCursorPosition(0, i);
+            Console.Write('┃');
+            Console.SetCursorPosition(Console.WindowWidth - 1, i);
+            Console.Write('┃');
+        }
+
+        sb.Append("┗");
+        for (int i = 0; i < Console.WindowWidth - 2; i++)
+        {
+            sb.Append('━');
+        }
+        sb.Append('┛');
+        Console.Write(sb);
+        sb.Clear();
+
+
+        Console.SetCursorPosition(0, Console.WindowHeight - 3);
+        sb.Append("┣");
+        for (int i = 0; i < Console.WindowWidth - 2; i++)
+        {
+            sb.Append('━');
+        }
+        sb.Append('┫');
+        Console.Write(sb);
+    }
+    static void DrawPrompt()
+    {
+        Console.CursorVisible = true;
+        Console.SetCursorPosition(1, Console.WindowHeight - 2);
+        Console.Write(">");
+    }
+    static void DrawCanvas(Canvas canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)
+    {
+        Console.CursorVisible = false;
+        int line = 1;
+        Console.SetCursorPosition(1, line++);
+
+        for (uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
+        {
+            for (uint windex = woffset; windex < woffset + Console.WindowWidth-2 && windex < canvas.Height; windex++)
             {
                 var upper = canvas[windex, hindex] ?? backgdoundColor;
                 var lower = canvas[windex, hindex + 1] ?? backgdoundColor;
@@ -48,8 +103,8 @@ class Program
                     Console.Write('▀');
                 }
             }
-            Console.BackgroundColor = backgdoundColor;
-            Console.WriteLine();
+            Console.ResetColor();
+            Console.SetCursorPosition(1, line++);
         }
     }
 }

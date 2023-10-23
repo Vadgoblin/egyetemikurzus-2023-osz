@@ -1,4 +1,6 @@
-﻿class Program
+﻿using E394KZ.Shapes;
+
+class Program
 {
     const uint CANVAS_WIDTH = 1920;
     const uint CANVAS_HEIGHT = 1080;
@@ -6,11 +8,13 @@
     static void Main(string[] args)
     {
         var canvas = new ConsoleColor?[CANVAS_WIDTH, CANVAS_HEIGHT];
+        BaseShape shape = new Dot("pont",10,12,ConsoleColor.Blue);
+       
         var defaultbackgdoundcolor = Console.BackgroundColor;
         Fill(canvas, ConsoleColor.DarkGray);
         DrawCircle(canvas, 4, 4, 4, ConsoleColor.Red);
         canvas[2, 3] = ConsoleColor.White;
-
+        canvas = shape.Draw(canvas);
         PrintCanvas(canvas, 1, 1, defaultbackgdoundcolor);
 
         Console.ReadLine();

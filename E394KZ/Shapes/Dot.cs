@@ -8,7 +8,7 @@ namespace E394KZ.Shapes
 {
     internal class Dot : BaseShape
     {
-        public Dot(string name, uint x, uint y, ConsoleColor color) : base(name, x, y)
+        public Dot(string name, uint x, uint y, ConsoleColor color) : base(name, x, y,color)
         {
         }
         public override ConsoleColor?[,] Draw(ConsoleColor?[,] canvas)

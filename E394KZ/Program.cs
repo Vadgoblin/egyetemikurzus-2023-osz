@@ -9,19 +9,13 @@ class Program
     static void Main(string[] args)
     {
         var canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+        canvas.Fill(ConsoleColor.DarkGray);
 
         var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 8);
         circle.Draw(canvas);
 
         var dot = new Dot("pont", 10, 12, ConsoleColor.Blue);
         dot.Draw(canvas);
-
-        //var defaultbackgdoundcolor = Console.BackgroundColor;
-        //Fill(canvas, ConsoleColor.DarkGray);
-        //DrawCircle(canvas, 4, 4, 10, ConsoleColor.Red);
-        //canvas[2, 3] = ConsoleColor.White;
-        //shape.Draw(canvas);
-
 
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
         Console.ReadLine();

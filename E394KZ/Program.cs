@@ -16,7 +16,7 @@
         Console.ReadLine();
     }
 
-    static void DrawCircle(ConsoleColor?[,] canvas,int centerX, int centerY, int radius, ConsoleColor color)
+    static void DrawCircle(ConsoleColor?[,] canvas, int centerX, int centerY, int radius, ConsoleColor color)
     {
         for (int y = 0; y < canvas.GetLength(1); y++)
         {
@@ -31,22 +31,22 @@
         }
     }
 
-    static void Fill(ConsoleColor?[,] canvas,ConsoleColor color) 
+    static void Fill(ConsoleColor?[,] canvas, ConsoleColor color)
     {
-        for(int i = 0; i <  canvas.GetLength(0); i++)
+        for (int i = 0; i < canvas.GetLength(0); i++)
         {
-            for(int j = 0; j < canvas.GetLength(1); j++)
+            for (int j = 0; j < canvas.GetLength(1); j++)
             {
-                canvas[i,j] = color;
+                canvas[i, j] = color;
             }
         }
     }
 
     static void PrintCanvas(ConsoleColor?[,] canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)
     {
-        for(uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 1) *2 && hindex < canvas.GetLength(1); hindex+=2)
+        for (uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 1) * 2 && hindex < canvas.GetLength(1); hindex += 2)
         {
-            for(uint windex = woffset; windex < woffset + Console.WindowWidth && windex < canvas.GetLength(0); windex++)
+            for (uint windex = woffset; windex < woffset + Console.WindowWidth && windex < canvas.GetLength(0); windex++)
             {
                 var upper = canvas[windex, hindex] ?? backgdoundColor;
                 var lower = canvas[windex, hindex + 1] ?? backgdoundColor;

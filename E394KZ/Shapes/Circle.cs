@@ -16,12 +16,9 @@
                     double distance = Math.Sqrt(Math.Pow(X - (int)x, 2) + Math.Pow(Y - (int)y, 2));
                     if (distance < Radius)
                     {
-                        //Console.Write("X");
                         canvas[x, y] = Color;
                     }
-                    //else Console.Write(" ");
                 }
-                //Console.WriteLine();
             }
         }
     }

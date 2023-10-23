@@ -3,12 +3,9 @@ using E394KZ.Shapes;
 
 class Program
 {
-    const uint CANVAS_WIDTH = 1920;
-    const uint CANVAS_HEIGHT = 1080;
-
-    static void Main(string[] args)
+    static void Main()
     {
-        var canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+        var canvas = new Canvas(1920, 1080);
         canvas.Fill(ConsoleColor.DarkGray);
 
         var circle = new Circle("kor", 12, 12, ConsoleColor.Red, 8);
@@ -17,19 +14,11 @@ class Program
         var dot = new Dot("pont", 10, 12, ConsoleColor.Blue);
         dot.Draw(canvas);
 
+        var rectangle = new Rectangle("rect", 10, 13, ConsoleColor.Yellow, 6, 5);
+        rectangle.Draw(canvas);
+
         PrintCanvas(canvas, 0, 0, Console.BackgroundColor);
         Console.ReadLine();
-    }
-
-    static void Fill(ConsoleColor?[,] canvas, ConsoleColor color)
-    {
-        for (int i = 0; i < canvas.GetLength(0); i++)
-        {
-            for (int j = 0; j < canvas.GetLength(1); j++)
-            {
-                canvas[i, j] = color;
-            }
-        }
     }
 
     static void PrintCanvas(Canvas canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)

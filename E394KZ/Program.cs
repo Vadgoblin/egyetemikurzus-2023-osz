@@ -26,7 +26,7 @@ class Program
 
                 if (input != "")
                 {
-                    if (StartWidth(input.ToLower(), new string[] { "dot", "line", "circle", "rectangle", "triangle" }))
+                    if (IsStringStartingWidthShape(input.ToLower()))
                     {
                         try
                         {
@@ -68,9 +68,10 @@ class Program
             }
         }
     }
-    static bool StartWidth(string text, string[] prefixArray)
+    static bool IsStringStartingWidthShape(string text)
     {
-        foreach(var prefix in prefixArray)
+        var prefixArray = new string[] { "dot", "line", "circle", "rectangle", "triangle" };
+        foreach (var prefix in prefixArray)
         {
             if (text.StartsWith(prefix)) return true;
         }
@@ -80,7 +81,7 @@ class Program
     {
         static string NameChecker(string name)
         {
-            if(StartWidth(name.ToLower(),new string[] { "dot", "line", "circle", "rectangle", "triangle" }))
+            if(IsStringStartingWidthShape(name.ToLower()))
             {
                 var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle","").Replace("rectangle", "").Replace("triangle", "");
                 if (tmp.Length>0 && char.IsDigit(tmp[0]))throw new InvalidNameException(name);

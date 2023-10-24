@@ -53,6 +53,16 @@ class Program
                         canvas.Draw(shapeHistory);
                         needFullRedraw = true;
                     }
+                    else if (input == "help")
+                    {
+                        GUI.ShowHelp();
+                        needFullRedraw = true;
+                    }
+                    else if (input.StartsWith("stat")) ;
+                    else if (input.StartsWith("save")) ;
+                    else if (input.StartsWith("load")) ;
+                    else if (input.StartsWith("offset")) ;
+
                     else
                     {
                         GUI.DrawErrorbox($"Unknown command: \"{input}\"", "Input error");

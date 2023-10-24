@@ -234,5 +234,108 @@ namespace E394KZ
         {
             return (Console.WindowHeight < 11 || Console.WindowWidth < 50);
         }
+
+        public static void ShowHelp()
+        {
+            Console.CursorVisible = false;
+            var text = new string[]
+            {
+                "Új alakzat lézrehozása: (név elhagyható)",
+                "    pont: dot {x} {y} {color} {name}",
+                "    vonal: line {start_x} {start_y} {end_x} {end_y} {color} {name}",
+                "    téglalap: rectangle {x} {y} {width} {height} {color} {name}",
+                "    kör: circle {x} {y} {radius} {color} {name}",
+                "    háromszög: triangle {x1} {y1} {x2} {y2} {x3} {y3} {color} {name}",
+                "",
+                "Támogatott színek:",
+                "    Black DarkBlue DarkGreen DarkCyan DarkRed DarkMagenta DarkYellow",
+                "    DarkGray Gray Blue Green Cyan Red Magenta Yellow White",
+                "",
+                "További parancsok:",
+                "    help: segítség megjelenítése",
+                "    stat: statisztika megjelenítése",
+                "    save {name}: alakzatok mengése {name} néven",
+                "    load {name}: {name} néven mentett alakzatok betöltése",
+                "    offset {x} {y}: megjelenítési eltolás megváltoztatása"
+            };
+            if (Console.WindowWidth < 99 || Console.WindowHeight < 25)
+            {
+                Console.Clear();
+                foreach (var line in text)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            else
+            {
+                var width = 72;
+                var height = 21;
+
+                var x = (Console.WindowWidth - 25 - width) / 2;
+                var y = (Console.WindowHeight - 2 - height) / 2 ;
+
+                var sb = new StringBuilder();
+                sb.Append("╭");
+                for (int i = 0; i < width - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('╮');
+                Console.SetCursorPosition(x, y);
+                Console.Write(sb.ToString());
+                sb.Clear();
+
+                sb.Append("│");
+                for (int i = 0; i < width - 2; i++)
+                {
+                    sb.Append(" ");
+                }
+                sb.Append('│');
+                var vertical = sb.ToString();
+                sb.Clear();
+
+                Console.SetCursorPosition(x, y + 1);
+                Console.Write(vertical);
+
+                sb.Append("├");
+                for (int i = 0; i < width - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('┤');
+                Console.SetCursorPosition(x, y + 2);
+                Console.Write(sb.ToString());
+                sb.Clear();
+
+                for (int i = 3; i < height - 1; i++)
+                {
+                    Console.SetCursorPosition(x, y + i);
+                    Console.Write(vertical);
+                }
+
+                sb.Append("╰");
+                for (int i = 0; i < width - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('╯');
+                Console.SetCursorPosition(x, y + height - 1);
+                Console.Write(sb.ToString());
+
+                int xoffset = (width - 2) / 2 - ("Help".Length) / 2;
+                Console.SetCursorPosition(x + 1 + xoffset, y + 1);
+                Console.Write("Help");
+
+                for(int i = 0; i < text.Length; i++)
+                {
+                    Console.SetCursorPosition(x + 2, y + 3 + i);
+                    Console.Write(text[i]);
+                }
+
+                Console.ResetColor();
+            }
+
+            Console.ReadLine();
+        }
     }
 }

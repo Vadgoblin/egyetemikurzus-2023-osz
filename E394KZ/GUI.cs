@@ -1,13 +1,19 @@
 ﻿using E394KZ.Shapes;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace E394KZ
 {
     internal class GUI
     {
-        public static uint HorizontalOffset { get; private set; } = 0 ;
-        public static uint VerticalOffset { get; private set; } = 0 ;
+        public static uint Xoffset { get; private set; } = 0 ;
+        public static uint Yoffset { get; private set; } = 0 ;
         public static ConsoleColor BackgroundColor { get; private set; } = ConsoleColor.Black;
+        public static void ChangeOffset(uint x_offset, uint y_offset)
+        {
+            Xoffset = x_offset;
+            Yoffset = y_offset;
+        }
         public static void RedrawScreen(Canvas canvas, List<BaseShape> shapeHistory)
         {
             Console.Clear();
@@ -93,14 +99,20 @@ namespace E394KZ
         {
             Console.CursorVisible = false;
             int line = 1;
-            Console.SetCursorPosition(1, line++);
-
-            for (uint hindex = HorizontalOffset; hindex < HorizontalOffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
+            
+            for(uint y = 0 ; y < Console.WindowHeight - 4; y++)
             {
-                for (uint windex = VerticalOffset; windex < VerticalOffset + Console.WindowWidth - 27 && windex < canvas.Height; windex++)
+                Console.SetCursorPosition(1, line++);
+                for (uint x = 0; x < Console.WindowWidth - 27; x++)
                 {
-                    var upper = canvas[windex, hindex] ?? BackgroundColor;
-                    var lower = canvas[windex, hindex + 1] ?? BackgroundColor;
+                    ConsoleColor upper = BackgroundColor;
+                    ConsoleColor lower = BackgroundColor;
+
+                    if (Xoffset + x < canvas.Width)
+                    {
+                        if(Yoffset + y * 2 + 1 < canvas.Width) lower = canvas[Xoffset + x, Yoffset + y * 2 + 1] ?? BackgroundColor;
+                        if (Yoffset + y * 2 < canvas.Width) upper = canvas[Xoffset + x, Yoffset + y * 2] ?? BackgroundColor;
+                    }
 
                     if (upper == lower)
                     {
@@ -113,10 +125,33 @@ namespace E394KZ
                         Console.BackgroundColor = lower;
                         Console.Write('▀');
                     }
+
+                    Console.ResetColor();
                 }
-                Console.ResetColor();
-                Console.SetCursorPosition(1, line++);
             }
+
+            //for (uint hindex = HorizontalOffset; hindex < HorizontalOffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
+            //{
+            //    for (uint windex = VerticalOffset; windex < VerticalOffset + Console.WindowWidth - 27 && windex < canvas.Height; windex++)
+            //    {
+            //        var upper = canvas[windex, hindex] ?? BackgroundColor;
+            //        var lower = canvas[windex, hindex + 1] ?? BackgroundColor;
+
+            //        if (upper == lower)
+            //        {
+            //            Console.BackgroundColor = upper;
+            //            Console.Write(' ');
+            //        }
+            //        else
+            //        {
+            //            Console.ForegroundColor = upper;
+            //            Console.BackgroundColor = lower;
+            //            Console.Write('▀');
+            //        }
+            //    }
+            //    Console.ResetColor();
+            //    Console.SetCursorPosition(1, line++);
+            //}
         }
         public static void DrawLastShapes(List<BaseShape> shapeHistory)
         {
@@ -216,16 +251,9 @@ namespace E394KZ
             Console.SetCursorPosition(x + 1 + xoffset, y + 1);
             Console.Write(title);
 
-            if (msg.Length > width - 2)
-            {
-
-            }
-            else
-            {
-                xoffset = ((width - 1) - msg.Length) / 2;
-                Console.SetCursorPosition(x + 1 + xoffset, y + 4);
-                Console.Write(msg);
-            }
+            xoffset = ((width - 1) - msg.Length) / 2;
+            Console.SetCursorPosition(x + 1 + xoffset, y + 4);
+            Console.Write(msg);
 
             Console.ResetColor();
             Console.ReadLine();

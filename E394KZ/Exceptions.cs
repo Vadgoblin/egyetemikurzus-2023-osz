@@ -17,8 +17,8 @@
     }
     class InvalidArgumentumCountException : ShapeException
     {
-        public InvalidArgumentumCountException(string shapetype,int argcount)
-            : base($"Invalid argumentum count({argcount}) for {shapetype}", "InvalidArgumentumCountException") { }
+        public InvalidArgumentumCountException(string command,int argcount)
+            : base($"Invalid argumentum count ({argcount}) for {command}", "InvalidArgumentumCountException") { }
     }
     class InvalidNameException : ShapeException
     {

@@ -35,16 +35,9 @@ class Program
                 {
                     if (IsStringStartingWidthShape(input.ToLower()))
                     {
-                        try
-                        {
-                            var shape = ShapeParser(input, shapeHistory);
-                            canvas.Draw(shape);
-                            shapeHistory.Add(shape);
-                        }
-                        catch (ShapeException ex)
-                        {
-                            GUI.DrawErrorbox(ex.Message, ex.ExceptionType);
-                        }
+                        var shape = ShapeParser(input, shapeHistory);
+                        canvas.Draw(shape);
+                        shapeHistory.Add(shape);
                     }
                     else if (input == "undo")
                     {
@@ -61,7 +54,23 @@ class Program
                     else if (input.StartsWith("stat")) ;
                     else if (input.StartsWith("save")) ;
                     else if (input.StartsWith("load")) ;
-                    else if (input.StartsWith("offset")) ;
+                    else if (input.StartsWith("offset"))
+                    {
+                        var inputSplit = input.Split(' ');
+                        if (inputSplit.Length != 3) throw new InvalidArgumentumCountException("offset", input.Length);
+
+                        var x = Convert.ToUInt32(inputSplit[1]);
+                        var y = Convert.ToUInt32(inputSplit[2]);
+
+                        if (canvas.Width <= Console.WindowWidth - 27) x = 0;
+                        else if (canvas.Width < x + Console.WindowWidth - 27) x = (uint)canvas.Width - ((uint)Console.WindowWidth - 27);
+
+                        if(canvas.Height <= Console.WindowHeight - 4) y = 0;
+                        else if(canvas.Height <  y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
+                        
+                        GUI.ChangeOffset(x, y);
+                    }
+
 
                     else
                     {
@@ -83,6 +92,10 @@ class Program
                 Console.WriteLine("It must be at least 11 character high and 50 character wide");
                 while (GUI.IsWindowTooSmall()) Thread.Sleep(50);
                 needFullRedraw = true;
+            }
+            catch (ShapeException ex)
+            {
+                GUI.DrawErrorbox(ex.Message, "InvalidArgumentumCountException");
             }
         }
     }

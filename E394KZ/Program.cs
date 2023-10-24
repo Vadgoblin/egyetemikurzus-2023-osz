@@ -1,7 +1,5 @@
 ﻿using E394KZ;
 using E394KZ.Shapes;
-using System.Runtime.ExceptionServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 class Program
@@ -14,14 +12,23 @@ class Program
         var shapeHistory = new List<BaseShape>();
 
         var lastSize = (Console.WindowWidth, Console.WindowHeight);
-        DrawFrame();
+        var needFullRedraw = false;
+        GUI.DrawFrame();
         while (true)
         {
-            DrawCanvas(canvas, 0, 0, Console.BackgroundColor);
-            DrawLastShapes(shapeHistory);
-            DrawPrompt();
             try
             {
+                if (needFullRedraw)
+                {
+                    GUI.RedrawScreen(canvas, shapeHistory);
+                }
+                else
+                {
+                    GUI.DrawCanvas(canvas);
+                    GUI.DrawLastShapes(shapeHistory);
+                    GUI.DrawPrompt();
+                }
+
                 var input = Console.ReadLine() ?? "";
 
                 if (input != "")
@@ -36,35 +43,31 @@ class Program
                         }
                         catch (ShapeException ex)
                         {
-                            DrawErrorbox(ex.Message, ex.ExceptionType);
+                            GUI.DrawErrorbox(ex.Message, ex.ExceptionType);
                             Console.ReadLine();
                         }
                     }
                     else if (input == "undo")
                     {
                         shapeHistory.RemoveAt(shapeHistory.Count - 1);
-                        ClearLastShapes();
-                        canvas.Clear();
-                        canvas.Draw(shapeHistory);
+                        needFullRedraw = true;
                     }
 
-                    ClearPrompt(input.Length);
+                    if (input.Length >= Console.WindowWidth - 3) needFullRedraw = true;
                 }
                 else if (input == "" || lastSize != (Console.WindowWidth, Console.WindowHeight))
                 {
                     lastSize = (Console.WindowWidth, Console.WindowHeight);
-                    Console.Clear();
-                    DrawFrame();
+                    needFullRedraw = true;
                 }
             }
-            catch(WindowsTooSmallException)
+            catch (WindowsTooSmallException)
             {
                 Console.Clear();
                 Console.WriteLine("Window is too small!");
                 Console.WriteLine("It must be at least 11 character high and 50 character wide");
-                while (IsWindowTooSmall()) Thread.Sleep(50);
-                Console.Clear();
-                DrawFrame();
+                while (GUI.IsWindowTooSmall()) Thread.Sleep(50);
+                needFullRedraw = true;
             }
         }
     }
@@ -81,10 +84,10 @@ class Program
     {
         static string NameChecker(string name)
         {
-            if(IsStringStartingWidthShape(name.ToLower()))
+            if (IsStringStartingWidthShape(name.ToLower()))
             {
-                var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle","").Replace("rectangle", "").Replace("triangle", "");
-                if (tmp.Length>0 && char.IsDigit(tmp[0]))throw new InvalidNameException(name);
+                var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle", "").Replace("rectangle", "").Replace("triangle", "");
+                if (tmp.Length > 0 && char.IsDigit(tmp[0])) throw new InvalidNameException(name);
             }
             return name;
         }
@@ -96,7 +99,7 @@ class Program
                 .Concat(shapename.Skip(1))
                 .ToArray()
             );
-            return $"{name}{countOfThatTypeOfShape+1}";
+            return $"{name}{countOfThatTypeOfShape + 1}";
         }
 
         var textSplit = text.Split(' ');
@@ -109,12 +112,12 @@ class Program
         switch (textSplit[0].ToLower())
         {
             case "dot":
-                if (textSplit.Length != 5 && textSplit.Length != 4) throw new InvalidArgumentumCountException("dot",textSplit.Length);
+                if (textSplit.Length != 5 && textSplit.Length != 4) throw new InvalidArgumentumCountException("dot", textSplit.Length);
                 x = Convert.ToUInt32(textSplit[1]);
                 y = Convert.ToUInt32(textSplit[2]);
                 color = ConsoleColorParser(textSplit[3]);
-                name = (textSplit.Length == 5) ? NameChecker(textSplit[4]) : GetAutoName(shapeHistory,"dot");
-                return new Dot(name,x,y,color);
+                name = (textSplit.Length == 5) ? NameChecker(textSplit[4]) : GetAutoName(shapeHistory, "dot");
+                return new Dot(name, x, y, color);
 
             case "line":
                 if (textSplit.Length != 7 && textSplit.Length != 6) throw new InvalidArgumentumCountException("line", textSplit.Length);
@@ -124,7 +127,7 @@ class Program
                 var y2 = Convert.ToUInt32(textSplit[4]);
                 color = ConsoleColorParser(textSplit[5]);
                 name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "line");
-                return new Line(name,x,y,color,x2,y2);
+                return new Line(name, x, y, color, x2, y2);
 
             case "rectangle":
                 if (textSplit.Length != 7 && textSplit.Length != 6) throw new InvalidArgumentumCountException("rectangle", textSplit.Length);
@@ -134,7 +137,7 @@ class Program
                 var height = Convert.ToUInt32(textSplit[4]);
                 color = ConsoleColorParser(textSplit[5]);
                 name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "rectangle");
-                return new Rectangle(name,x,y,width,height,color);
+                return new Rectangle(name, x, y, width, height, color);
 
             case "circle":
                 if (textSplit.Length != 6 && textSplit.Length != 5) throw new InvalidArgumentumCountException("circle", textSplit.Length);
@@ -170,225 +173,5 @@ class Program
         {
             throw new InvalidColorException(colorString);
         }
-    }
-
-
-    static void DrawFrame()
-    {
-        if(IsWindowTooSmall())throw new WindowsTooSmallException();
-        Console.CursorVisible = false;
-        Console.SetCursorPosition(0, 0);
-        var sb = new StringBuilder();
-        sb.Append("┏");
-        for (int i = 0; i < Console.WindowWidth - 2; i++)
-        {
-            sb.Append('━');
-        }
-        sb.Append('┓');
-        Console.WriteLine(sb);
-        sb.Clear();
-
-        for (int i = 1; i < Console.WindowHeight - 1; i++)
-        {
-            Console.SetCursorPosition(0, i);
-            Console.Write('┃');
-            Console.SetCursorPosition(Console.WindowWidth - 1, i);
-            Console.Write('┃');
-        }
-
-        sb.Append("┗");
-        for (int i = 0; i < Console.WindowWidth - 2; i++)
-        {
-            sb.Append('━');
-        }
-        sb.Append('┛');
-        Console.Write(sb);
-        sb.Clear();
-
-
-        Console.SetCursorPosition(0, Console.WindowHeight - 3);
-        sb.Append("┣");
-        for (int i = 0; i < Console.WindowWidth - 2; i++)
-        {
-            sb.Append('━');
-        }
-        sb.Append('┫');
-        Console.Write(sb);
-
-        Console.SetCursorPosition(Console.WindowWidth-26, 0);
-        Console.Write('┳');
-        for(int i = 1;i<Console.WindowHeight - 3; i++)
-        {
-            Console.SetCursorPosition(Console.WindowWidth - 26, i);
-            Console.Write('┃');
-        }
-        Console.SetCursorPosition(Console.WindowWidth - 26, Console.WindowHeight - 3);
-        Console.Write('┻');
-        Console.SetCursorPosition(Console.WindowWidth - 25, 1);
-        Console.Write("Last shapes:");
-        sb.Clear();
-        sb.Append('┠');
-        for (int i = 0; i < 24; i++) sb.Append('─');
-        sb.Append('┨');
-        Console.SetCursorPosition(Console.WindowWidth - 26, 2);
-        Console.Write(sb.ToString());
-    }
-    static void DrawPrompt()
-    {
-        Console.CursorVisible = true;
-        Console.SetCursorPosition(1, Console.WindowHeight - 2);
-        Console.Write(">");
-    }
-    static void ClearPrompt(int len)
-    {
-        Console.CursorVisible = false;
-        Console.SetCursorPosition(2, Console.WindowHeight - 2);
-        for (uint i = 0; i < len; i++) { Console.Write(" "); }
-    }
-    static void DrawCanvas(Canvas canvas, uint woffset, uint hoffset, ConsoleColor backgdoundColor)
-    {
-        Console.CursorVisible = false;
-        int line = 1;
-        Console.SetCursorPosition(1, line++);
-
-        for (uint hindex = hoffset; hindex < hoffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
-        {
-            for (uint windex = woffset; windex < woffset + Console.WindowWidth-27 && windex < canvas.Height; windex++)
-            {
-                var upper = canvas[windex, hindex] ?? backgdoundColor;
-                var lower = canvas[windex, hindex + 1] ?? backgdoundColor;
-
-                if (upper == lower)
-                {
-                    Console.BackgroundColor = upper;
-                    Console.Write(' ');
-                }
-                else
-                {
-                    Console.ForegroundColor = upper;
-                    Console.BackgroundColor = lower;
-                    Console.Write('▀');
-                }
-            }
-            Console.ResetColor();
-            Console.SetCursorPosition(1, line++);
-        }
-    }
-    static void DrawLastShapes(List<BaseShape> shapeHistory)
-    {
-        for (int i = 0;i<Console.WindowHeight-6 && i < shapeHistory.Count;i++)
-        {
-            Console.SetCursorPosition(Console.WindowWidth - 25, 3+i);
-            if (i == Console.WindowHeight - 7) Console.Write("...");
-            else
-            {
-                var text = $"{shapeHistory[shapeHistory.Count - 1 - i].Name}";
-                if (text.Length > 24) text = text.Substring(0, 24);
-                else for (int j = text.Length; j < 24; j++) text += " ";
-                Console.Write(text);
-            }
-        }
-    }
-    static void ClearLastShapes()
-    {
-        for (int i = 0; i < Console.WindowHeight - 6; i++)
-        {
-            Console.SetCursorPosition(Console.WindowWidth - 25, 3 + i);
-            var text = "";
-            for (int j = text.Length; j < 24; j++) text += " ";
-            Console.Write(text);
-        }
-    }
-
-    static void DrawErrorbox(string msg, string title)
-    {
-        if(IsWindowTooSmall()) throw new WindowsTooSmallException();
-        Console.CursorVisible = false;
-        Console.ForegroundColor = ConsoleColor.Red;
-
-        if(Console.WindowWidth-27 < msg.Length + 4)
-        {
-            msg = msg.Substring(0, Console.WindowWidth - 31);
-        }
-        if(Console.WindowWidth-27 < title.Length + 4)
-        {
-            title = title.Substring(0, Console.WindowWidth - 31);
-        }
-
-        var width = Math.Max(msg.Length,title.Length+2)+2;
-        var height = 7;
-
-        var x = (Console.WindowWidth - 25) / 2 - width / 2;
-        var y = (Console.WindowHeight - 4) /2 - height / 2;
-        
-        var sb = new StringBuilder();
-        sb.Append("╭");
-        for(int i = 0;i < width-2;i++)
-        {
-            sb.Append("─");
-        }
-        sb.Append('╮');
-        Console.SetCursorPosition(x, y);
-        Console.Write(sb.ToString());
-        sb.Clear();
-
-        sb.Append("│");
-        for (int i = 0; i < width - 2; i++)
-        {
-            sb.Append(" ");
-        }
-        sb.Append('│');
-        var vertical = sb.ToString();
-        sb.Clear();
-
-        Console.SetCursorPosition(x, y + 1);
-        Console.Write(vertical);
-
-        sb.Append("├");
-        for (int i = 0; i < width - 2; i++)
-        {
-            sb.Append("─");
-        }
-        sb.Append('┤');
-        Console.SetCursorPosition(x, y + 2);
-        Console.Write(sb.ToString());
-        sb.Clear();
-
-        for (int i = 3; i < height - 1; i++)
-        {
-            Console.SetCursorPosition(x, y+i);
-            Console.Write(vertical);
-        }
-
-        sb.Append("╰");
-        for (int i = 0; i < width - 2; i++)
-        {
-            sb.Append("─");
-        }
-        sb.Append('╯');
-        Console.SetCursorPosition(x, y+height-1);
-        Console.Write(sb.ToString());
-
-        int xoffset = (width - 2)/2 - (title.Length) / 2;
-        Console.SetCursorPosition(x + 1 + xoffset, y + 1);
-        Console.Write(title);
-
-        if(msg.Length > width - 2)
-        {
-
-        }
-        else
-        {
-            xoffset = ((width - 1) - msg.Length) / 2;
-            Console.SetCursorPosition(x + 1 + xoffset, y + 4);
-            Console.Write(msg);
-        }
-
-        Console.ResetColor();
-    }
-
-    static bool IsWindowTooSmall()
-    {
-        return (Console.WindowHeight < 11 || Console.WindowWidth < 50);
     }
 }

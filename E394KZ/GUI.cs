@@ -228,6 +228,7 @@ namespace E394KZ
             }
 
             Console.ResetColor();
+            Console.ReadLine();
         }
         public static bool IsWindowTooSmall()
         {

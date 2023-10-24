@@ -44,13 +44,18 @@ class Program
                         catch (ShapeException ex)
                         {
                             GUI.DrawErrorbox(ex.Message, ex.ExceptionType);
-                            Console.ReadLine();
                         }
                     }
                     else if (input == "undo")
                     {
                         shapeHistory.RemoveAt(shapeHistory.Count - 1);
+                        canvas.Clear();
+                        canvas.Draw(shapeHistory);
                         needFullRedraw = true;
+                    }
+                    else
+                    {
+                        GUI.DrawErrorbox($"Unknown command: \"{input}\"", "Input error");
                     }
 
                     if (input.Length >= Console.WindowWidth - 3) needFullRedraw = true;

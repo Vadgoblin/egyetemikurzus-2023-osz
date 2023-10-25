@@ -61,6 +61,12 @@ class Program
                         GUI.ShowHelp();
                         needFullRedraw = true;
                     }
+                    else if (input == "clear")
+                    {
+                        canvas.Clear();
+                        shapeHistory.Clear();
+                        needFullRedraw = true;
+                    }
                     else if (input.StartsWith("stat")) ;
                     else if (input.StartsWith("save"))
                     {

@@ -30,4 +30,8 @@
     {
         public WindowsTooSmallException():base(){}
     }
+    class LoadException : Exception
+    {
+        public LoadException(string msg) : base(msg) { }
+    }
 }

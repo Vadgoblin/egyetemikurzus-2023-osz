@@ -5,12 +5,11 @@
         public uint Width { get; init; }
         public uint Height { get; init; }
 
-        public Rectangle(string name, uint x, uint y, ConsoleColor color, uint width, uint height) : base(name, x, y, color)
+        public Rectangle(string name, uint x, uint y, uint width, uint height, ConsoleColor color) : base(name, x, y, color)
         {
             Width = width;
             Height = height;
         }
-        public Rectangle(string name, uint x, uint y, uint width, uint height, ConsoleColor color):this(name, x, y, color, width, height) { }
         public override void Draw(Canvas canvas)
         {
             for (uint x = X; x < X + Width && x < canvas.Width; x++)

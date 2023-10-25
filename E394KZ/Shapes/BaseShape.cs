@@ -1,5 +1,12 @@
-﻿namespace E394KZ.Shapes
+﻿using System.Text.Json.Serialization;
+
+namespace E394KZ.Shapes
 {
+    [JsonDerivedType(typeof(Dot), typeDiscriminator: "dot")]
+    [JsonDerivedType(typeof(Line), typeDiscriminator: "line")]
+    [JsonDerivedType(typeof(Circle), typeDiscriminator: "circle")]
+    [JsonDerivedType(typeof(Rectangle), typeDiscriminator: "rectangle")]
+    [JsonDerivedType(typeof(Triangle), typeDiscriminator: "triangle")]
     internal abstract record BaseShape
     {
         public string Name { get; init; }

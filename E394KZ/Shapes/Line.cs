@@ -5,12 +5,11 @@
         public uint EndX { get; init; }
         public uint EndY { get; init; }
 
-        public Line(string name, uint x, uint y, ConsoleColor color, uint endX, uint endY) : base(name, x, y, color)
+        public Line(string name, uint x, uint y, uint endX, uint endY, ConsoleColor color) : base(name, x, y, color)
         {
             EndX = endX;
             EndY = endY;
         }
-        public Line(string name, uint x, uint y, uint endX, uint endY, ConsoleColor color):this(name,x,y,color,endX,endY) { }
 
         public override void Draw(Canvas canvas)
         {

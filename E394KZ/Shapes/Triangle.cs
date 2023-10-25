@@ -26,14 +26,14 @@ namespace E394KZ.Shapes
         public uint V3X { get; init; }
         public uint V3Y { get; init; }
 
-        public Triangle(string name, uint x, uint y, ConsoleColor color, uint v2x, uint v2y, uint v3x, uint v3y) : base(name, x, y, color)
+        public Triangle(string name, uint v1x, uint v1y, uint v2x, uint v2y, uint v3x, uint v3y, ConsoleColor color) : base(name, v1x, v1y, color)
         {
             V2X = v2x;
             V2Y = v2y;
             V3X = v3x;
             V3Y = v3y;
         }
-        public Triangle(string name, uint v1x, uint v1y, uint v2x, uint v2y, uint v3x, uint v3y, ConsoleColor color) : this(name, v1x, v1y, color, v2x, v2y, v3x, v3y) { }
+        //public Triangle(string name, uint v1x, uint v1y, uint v2x, uint v2y, uint v3x, uint v3y, ConsoleColor color) : this(name, v1x, v1y, color, v2x, v2y, v3x, v3y) { }
 
         public override void Draw(Canvas canvas)
         {

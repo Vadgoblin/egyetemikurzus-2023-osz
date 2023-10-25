@@ -42,7 +42,7 @@ class Program
                     }
                     else if (input == "undo")
                     {
-                        if(shapeHistory.Count > 0)
+                        if (shapeHistory.Count > 0)
                         {
                             shapeHistory.RemoveAt(shapeHistory.Count - 1);
                             canvas.Clear();
@@ -74,7 +74,17 @@ class Program
                             Save(shapeHistory, inputSplit[1]);
                         }
                     }
-                    else if (input.StartsWith("load")) ;
+                    else if (input.StartsWith("load"))
+                    {
+                        var inputSplit = input.Split(' ');
+                        if (inputSplit.Length != 2) throw new InvalidArgumentumCountException("load", inputSplit.Length);
+
+                        shapeHistory = Load(inputSplit[1]);
+                        canvas.Clear();
+                        canvas.Draw(shapeHistory);
+                        needFullRedraw = true;
+
+                    }
                     else if (input.StartsWith("offset"))
                     {
                         var inputSplit = input.Split(' ');
@@ -86,9 +96,9 @@ class Program
                         if (canvas.Width <= Console.WindowWidth - 27) x = 0;
                         else if (canvas.Width < x + Console.WindowWidth - 27) x = (uint)canvas.Width - ((uint)Console.WindowWidth - 27);
 
-                        if(canvas.Height <= Console.WindowHeight - 4) y = 0;
-                        else if(canvas.Height <  y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
-                        
+                        if (canvas.Height <= Console.WindowHeight - 4) y = 0;
+                        else if (canvas.Height < y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
+
                         GUI.ChangeOffset(x, y);
                     }
 
@@ -176,7 +186,7 @@ class Program
                 var y2 = Convert.ToUInt32(textSplit[4]);
                 color = ConsoleColorParser(textSplit[5]);
                 name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "line");
-                return new Line(name, x, y, color, x2, y2);
+                return new Line(name, x, y, x2, y2, color);
 
             case "rectangle":
                 if (textSplit.Length != 7 && textSplit.Length != 6) throw new InvalidArgumentumCountException("rectangle", textSplit.Length);
@@ -207,7 +217,7 @@ class Program
                 var v3y = Convert.ToUInt32(textSplit[6]);
                 color = ConsoleColorParser(textSplit[7]);
                 name = (textSplit.Length == 9) ? NameChecker(textSplit[8]) : GetAutoName(shapeHistory, "triangle");
-                return new Triangle(name, x, y, color, v2x, v2y, v3x, v3y);
+                return new Triangle(name, x, y, v2x, v2y, v3x, v3y, color);
             default:
                 throw new Exception("this should never be called");
         }
@@ -224,17 +234,34 @@ class Program
         }
     }
 
-    static void Save(List<BaseShape> shapeHistory, string namae)
+    static void Save(List<BaseShape> shapeHistory, string saveName)
     {
         try
         {
             if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
-            File.WriteAllText($"saves/{namae}.json", JsonSerializer.Serialize(shapeHistory), Encoding.UTF8);
+            File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory));
             GUI.DrawMsgbox("Save succesfull.", "Save",false);
         }
-        catch
+        catch(Exception ex)
         {
             GUI.DrawMsgbox("Save failed.", "Save");
+        }
+    }
+    static List<BaseShape> Load(string saveName)
+    {
+        try
+        {
+            if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named {saveName}.");
+            else
+            {
+                var jsonTExt = File.ReadAllLines($"saves/{saveName}.json")[0];
+                var status = JsonSerializer.Deserialize< List<BaseShape>> (jsonTExt);
+                return status == null ? throw new Exception() : (List<BaseShape>)status;
+            }
+        }
+        catch(Exception e)
+        {
+            throw new Exception();
         }
     }
 }

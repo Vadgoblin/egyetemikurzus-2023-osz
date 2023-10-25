@@ -240,11 +240,13 @@ class Program
         try
         {
             if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
+
             var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
             File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory, jsonOptions));
+
             GUI.DrawMsgbox("Save succesfull.", "Save",false);
         }
-        catch(Exception ex)
+        catch(Exception ex)//io problem maybe? idk
         {
             GUI.DrawMsgbox("Save failed.", "Save");
         }
@@ -257,8 +259,10 @@ class Program
             else
             {
                 var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
-                var status = JsonSerializer.Deserialize< List<BaseShape>> (jsonTExt);
-                return status == null ? throw new Exception() : (List<BaseShape>)status;
+
+                var loadedShapeHistory = JsonSerializer.Deserialize< List<BaseShape>> (jsonTExt);
+
+                return loadedShapeHistory == null ? throw new Exception() : (List<BaseShape>)loadedShapeHistory;
             }
         }
         catch(Exception e)

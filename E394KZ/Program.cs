@@ -15,6 +15,7 @@ class Program
 
         var lastSize = (Console.WindowWidth, Console.WindowHeight);
         var needFullRedraw = false;
+        Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
         GUI.DrawFrame();
         while (true)
         {
@@ -101,6 +102,7 @@ class Program
                         else if (canvas.Height < y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
 
                         GUI.ChangeOffset(x, y);
+                        Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
                     }
 
 

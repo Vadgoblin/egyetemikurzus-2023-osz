@@ -178,11 +178,11 @@ namespace E394KZ
                 Console.Write(text);
             }
         }
-        public static void DrawErrorbox(string msg, string title)
+        public static void DrawMsgbox(string msg, string title,bool error = true)
         {
             if (IsWindowTooSmall()) throw new WindowsTooSmallException();
             Console.CursorVisible = false;
-            Console.ForegroundColor = ConsoleColor.Red;
+            if(error) Console.ForegroundColor = ConsoleColor.Red;
 
             if (Console.WindowWidth - 27 < msg.Length + 4)
             {

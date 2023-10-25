@@ -1,6 +1,7 @@
 ﻿using E394KZ;
 using E394KZ.Shapes;
 using System.Text;
+using System.Text.Json;
 
 class Program
 {
@@ -41,10 +42,17 @@ class Program
                     }
                     else if (input == "undo")
                     {
-                        shapeHistory.RemoveAt(shapeHistory.Count - 1);
-                        canvas.Clear();
-                        canvas.Draw(shapeHistory);
-                        needFullRedraw = true;
+                        if(shapeHistory.Count > 0)
+                        {
+                            shapeHistory.RemoveAt(shapeHistory.Count - 1);
+                            canvas.Clear();
+                            canvas.Draw(shapeHistory);
+                            needFullRedraw = true;
+                        }
+                        else
+                        {
+                            GUI.DrawMsgbox("There is nothing to undo.", "Error!");
+                        }
                     }
                     else if (input == "help")
                     {
@@ -52,12 +60,25 @@ class Program
                         needFullRedraw = true;
                     }
                     else if (input.StartsWith("stat")) ;
-                    else if (input.StartsWith("save")) ;
+                    else if (input.StartsWith("save"))
+                    {
+                        if (shapeHistory.Count == 0)
+                        {
+                            GUI.DrawMsgbox("There is nothing to save.", "Error?");
+                        }
+                        else
+                        {
+                            var inputSplit = input.Split(' ');
+                            if (inputSplit.Length != 2) throw new InvalidArgumentumCountException("save", inputSplit.Length);
+
+                            Save(shapeHistory, inputSplit[1]);
+                        }
+                    }
                     else if (input.StartsWith("load")) ;
                     else if (input.StartsWith("offset"))
                     {
                         var inputSplit = input.Split(' ');
-                        if (inputSplit.Length != 3) throw new InvalidArgumentumCountException("offset", input.Length);
+                        if (inputSplit.Length != 3) throw new InvalidArgumentumCountException("offset", inputSplit.Length);
 
                         var x = Convert.ToUInt32(inputSplit[1]);
                         var y = Convert.ToUInt32(inputSplit[2]);
@@ -74,7 +95,7 @@ class Program
 
                     else
                     {
-                        GUI.DrawErrorbox($"Unknown command: \"{input}\"", "Input error");
+                        GUI.DrawMsgbox($"Unknown command: \"{input}\"", "Input error");
                     }
 
                     if (input.Length >= Console.WindowWidth - 3) needFullRedraw = true;
@@ -95,7 +116,7 @@ class Program
             }
             catch (ShapeException ex)
             {
-                GUI.DrawErrorbox(ex.Message, "InvalidArgumentumCountException");
+                GUI.DrawMsgbox(ex.Message, "InvalidArgumentumCountException");
             }
         }
     }
@@ -200,6 +221,20 @@ class Program
         else
         {
             throw new InvalidColorException(colorString);
+        }
+    }
+
+    static void Save(List<BaseShape> shapeHistory, string namae)
+    {
+        try
+        {
+            if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
+            File.WriteAllText($"saves/{namae}.json", JsonSerializer.Serialize(shapeHistory), Encoding.UTF8);
+            GUI.DrawMsgbox("Save succesfull.", "Save",false);
+        }
+        catch
+        {
+            GUI.DrawMsgbox("Save failed.", "Save");
         }
     }
 }

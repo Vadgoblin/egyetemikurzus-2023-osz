@@ -1,5 +1,6 @@
 ﻿using E394KZ;
 using E394KZ.Shapes;
+using System.Data;
 using System.Text;
 using System.Text.Json;
 
@@ -239,7 +240,8 @@ class Program
         try
         {
             if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
-            File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory));
+            var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+            File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory, jsonOptions));
             GUI.DrawMsgbox("Save succesfull.", "Save",false);
         }
         catch(Exception ex)
@@ -254,7 +256,7 @@ class Program
             if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named {saveName}.");
             else
             {
-                var jsonTExt = File.ReadAllLines($"saves/{saveName}.json")[0];
+                var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
                 var status = JsonSerializer.Deserialize< List<BaseShape>> (jsonTExt);
                 return status == null ? throw new Exception() : (List<BaseShape>)status;
             }

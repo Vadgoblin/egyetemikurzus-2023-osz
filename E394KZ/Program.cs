@@ -109,7 +109,7 @@ class Program
                         GUI.ChangeOffset(x, y);
                         Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
                     }
-
+                    else if (input == "q" || input == "quit" || input == "exit") return;
 
                     else
                     {

@@ -1,6 +1,7 @@
 ﻿using E394KZ.Shapes;
 using System.Runtime.CompilerServices;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace E394KZ
 {
@@ -178,22 +179,22 @@ namespace E394KZ
                 Console.Write(text);
             }
         }
-        public static void DrawMsgbox(string msg, string title,bool error = true)
+        public static void DrawMsgbox(string messange, string title,bool error = true)
         {
             if (IsWindowTooSmall()) throw new WindowsTooSmallException();
             Console.CursorVisible = false;
             if(error) Console.ForegroundColor = ConsoleColor.Red;
 
-            if (Console.WindowWidth - 27 < msg.Length + 4)
+            if (Console.WindowWidth - 27 < messange.Length + 4)
             {
-                msg = msg.Substring(0, Console.WindowWidth - 31);
+                messange = messange.Substring(0, Console.WindowWidth - 31);
             }
             if (Console.WindowWidth - 27 < title.Length + 4)
             {
                 title = title.Substring(0, Console.WindowWidth - 31);
             }
 
-            var width = Math.Max(msg.Length, title.Length + 2) + 2;
+            var width = Math.Max(messange.Length, title.Length + 2) + 2;
             var height = 7;
 
             var x = (Console.WindowWidth - 25) / 2 - width / 2;
@@ -251,11 +252,95 @@ namespace E394KZ
             Console.SetCursorPosition(x + 1 + xoffset, y + 1);
             Console.Write(title);
 
-            xoffset = ((width - 1) - msg.Length) / 2;
+            xoffset = ((width - 1) - messange.Length) / 2;
             Console.SetCursorPosition(x + 1 + xoffset, y + 4);
-            Console.Write(msg);
+            Console.Write(messange);
 
             Console.ResetColor();
+            Console.ReadLine();
+        }
+        public static void DrawTextbox(string[] messange, string title)
+        {
+            Console.CursorVisible = false;
+            var textboxWidth = messange.Max(str => str.Length)+4;
+            var textboxHeight = messange.Length + 4;
+            
+            if (textboxWidth > Console.WindowWidth - 27 || textboxHeight > Console.WindowHeight - 4)
+            {
+                Console.Clear();
+                foreach (var line in messange)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            else
+            {
+               
+
+                var x = (Console.WindowWidth - 25 - textboxWidth) / 2;
+                var y = (Console.WindowHeight - 2 - textboxHeight) / 2;
+
+                var sb = new StringBuilder();
+                sb.Append("╭");
+                for (int i = 0; i < textboxWidth - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('╮');
+                Console.SetCursorPosition(x, y);
+                Console.Write(sb.ToString());
+                sb.Clear();
+
+                sb.Append("│");
+                for (int i = 0; i < textboxWidth - 2; i++)
+                {
+                    sb.Append(" ");
+                }
+                sb.Append('│');
+                var vertical = sb.ToString();
+                sb.Clear();
+
+                Console.SetCursorPosition(x, y + 1);
+                Console.Write(vertical);
+
+                sb.Append("├");
+                for (int i = 0; i < textboxWidth - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('┤');
+                Console.SetCursorPosition(x, y + 2);
+                Console.Write(sb.ToString());
+                sb.Clear();
+
+                for (int i = 3; i < textboxHeight - 1; i++)
+                {
+                    Console.SetCursorPosition(x, y + i);
+                    Console.Write(vertical);
+                }
+
+                sb.Append("╰");
+                for (int i = 0; i < textboxWidth - 2; i++)
+                {
+                    sb.Append("─");
+                }
+                sb.Append('╯');
+                Console.SetCursorPosition(x, y + textboxHeight - 1);
+                Console.Write(sb.ToString());
+
+                int xoffset = (textboxWidth - 2) / 2 - ("Help".Length) / 2;
+                Console.SetCursorPosition(x + 1 + xoffset, y + 1);
+                Console.Write("Help");
+
+                for (int i = 0; i < messange.Length; i++)
+                {
+                    Console.SetCursorPosition(x + 2, y + 3 + i);
+                    Console.Write(messange[i]);
+                }
+
+                Console.ResetColor();
+            }
+
             Console.ReadLine();
         }
         public static bool IsWindowTooSmall()
@@ -265,8 +350,7 @@ namespace E394KZ
 
         public static void ShowHelp()
         {
-            Console.CursorVisible = false;
-            var text = new string[]
+            var helpText = new string[]
             {
                 "Új alakzat lézrehozása: (név elhagyható)",
                 "    pont: dot {x} {y} {color} {name}",
@@ -287,84 +371,8 @@ namespace E394KZ
                 "    load {name}: {name} néven mentett alakzatok betöltése",
                 "    offset {x} {y}: megjelenítési eltolás megváltoztatása"
             };
-            if (Console.WindowWidth < 99 || Console.WindowHeight < 27)
-            {
-                Console.Clear();
-                foreach (var line in text)
-                {
-                    Console.WriteLine(line);
-                }
-            }
-            else
-            {
-                var width = 72;
-                var height = 22;
 
-                var x = (Console.WindowWidth - 25 - width) / 2;
-                var y = (Console.WindowHeight - 2 - height) / 2 ;
-
-                var sb = new StringBuilder();
-                sb.Append("╭");
-                for (int i = 0; i < width - 2; i++)
-                {
-                    sb.Append("─");
-                }
-                sb.Append('╮');
-                Console.SetCursorPosition(x, y);
-                Console.Write(sb.ToString());
-                sb.Clear();
-
-                sb.Append("│");
-                for (int i = 0; i < width - 2; i++)
-                {
-                    sb.Append(" ");
-                }
-                sb.Append('│');
-                var vertical = sb.ToString();
-                sb.Clear();
-
-                Console.SetCursorPosition(x, y + 1);
-                Console.Write(vertical);
-
-                sb.Append("├");
-                for (int i = 0; i < width - 2; i++)
-                {
-                    sb.Append("─");
-                }
-                sb.Append('┤');
-                Console.SetCursorPosition(x, y + 2);
-                Console.Write(sb.ToString());
-                sb.Clear();
-
-                for (int i = 3; i < height - 1; i++)
-                {
-                    Console.SetCursorPosition(x, y + i);
-                    Console.Write(vertical);
-                }
-
-                sb.Append("╰");
-                for (int i = 0; i < width - 2; i++)
-                {
-                    sb.Append("─");
-                }
-                sb.Append('╯');
-                Console.SetCursorPosition(x, y + height - 1);
-                Console.Write(sb.ToString());
-
-                int xoffset = (width - 2) / 2 - ("Help".Length) / 2;
-                Console.SetCursorPosition(x + 1 + xoffset, y + 1);
-                Console.Write("Help");
-
-                for(int i = 0; i < text.Length; i++)
-                {
-                    Console.SetCursorPosition(x + 2, y + 3 + i);
-                    Console.Write(text[i]);
-                }
-
-                Console.ResetColor();
-            }
-
-            Console.ReadLine();
+            DrawTextbox(helpText, "Help");
         }
     }
 }

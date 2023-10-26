@@ -285,10 +285,9 @@ namespace E394KZ
                 "    stat: statisztika megjelenítése",
                 "    save {name}: alakzatok mengése {name} néven",
                 "    load {name}: {name} néven mentett alakzatok betöltése",
-                "    export: todo",
                 "    offset {x} {y}: megjelenítési eltolás megváltoztatása"
             };
-            if (Console.WindowWidth < 99 || Console.WindowHeight < 28)
+            if (Console.WindowWidth < 99 || Console.WindowHeight < 27)
             {
                 Console.Clear();
                 foreach (var line in text)
@@ -299,7 +298,7 @@ namespace E394KZ
             else
             {
                 var width = 72;
-                var height = 23;
+                var height = 22;
 
                 var x = (Console.WindowWidth - 25 - width) / 2;
                 var y = (Console.WindowHeight - 2 - height) / 2 ;

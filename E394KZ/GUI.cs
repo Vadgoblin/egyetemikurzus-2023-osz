@@ -232,7 +232,7 @@ namespace E394KZ
             Console.Write(messange);
 
             Console.ResetColor();
-            Console.ReadLine();
+            Console.ReadKey();
         }
         public static void DrawTextbox(string[] messange, string title)
         {
@@ -316,7 +316,7 @@ namespace E394KZ
                 Console.ResetColor();
             }
 
-            Console.ReadLine();
+            Console.ReadKey();
         }
         public static bool IsWindowTooSmall()
         {

@@ -57,11 +57,11 @@ namespace E394KZ
 
         static private void ScreenSizeCheck()
         {
-            if (wantBigger) Console.WriteLine("Window width must be at least 96.\nWindow height must be at least 36.");
+            if (wantBigger) Console.WriteLine("Window width must be at least 96.\nWindow height must be at least 37.");
             else Console.WriteLine("Window width must be at least 48.\nWindow height must be at least 18.");
             while (
                 (!wantBigger && (Console.WindowHeight < 18 || Console.WindowWidth < 48)) ||
-                (wantBigger && (Console.WindowHeight < 36 || Console.WindowWidth < 96))
+                (wantBigger && (Console.WindowHeight < 37 || Console.WindowWidth < 96))
                 )
             {
                 Console.Title = $"w: {Console.WindowWidth} h: {Console.WindowHeight}";

@@ -9,8 +9,7 @@ static class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
-        Console.ReadLine();
-        BA.Start();
+
         var canvas = new Canvas(1920, 1080);
         var shapeHistory = new List<BaseShape>();
 

@@ -176,6 +176,7 @@ static class Program
                 var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle", "").Replace("rectangle", "").Replace("triangle", "");
                 if (tmp.Length > 0 && char.IsDigit(tmp[0])) throw new InvalidNameException(name);
             }
+            if (ContainsInvalidCharacter(name)) throw new InvalidCharacterInNameException("shape nickname");
             return name;
         }
         static string GetAutoName(List<BaseShape> shapeHistory, string shapename)

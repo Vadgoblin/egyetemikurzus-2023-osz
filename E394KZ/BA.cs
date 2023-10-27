@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,20 +10,27 @@ namespace E394KZ
 {
     partial class BA
     {
+        private static readonly bool wantBigger = true;
         static public void Start()
         {
-            ScreenSizeCheck();
             Console.Clear();
+            ScreenSizeCheck();
+
+            Console.SetCursorPosition(0, 0);
+            Console.Title = "                                                       ";
             Console.CursorVisible = false;
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
 
-            var magicConstant = File.ReadAllBytes("bincodedmagicconstant.bin");
+            
+            var magicConstant = File.ReadAllBytes($"bincodedmagicconstant{(wantBigger ? "bigger":"")}.bin");
             /*
              * Imagine if it were a hardcoded byte array.
              * The reason why is's in a file is because its a tiny little bit big and poor VS would have a hard time handling it.
              * In other words, it would slow down VS and make it eat all of your ram .
              */
+
+
             var w = new Stopwatch();
             double asd = 0;
             w.Start();
@@ -30,9 +38,9 @@ namespace E394KZ
             int q = 0;
             for (int i = 0; i < 6569; i++)
             {
-                for(int l = 0; l < 18; l++)
+                for(int l = 0; l < 18 * (wantBigger ? 2:1); l++)
                 {
-                    for(int c = 0; c < 12; c++)
+                    for(int c = 0; c < 12 * (wantBigger ? 2 : 1); c++)
                     {
                         s.Append(Decode(magicConstant[q++]));
                     }
@@ -49,7 +57,16 @@ namespace E394KZ
 
         static private void ScreenSizeCheck()
         {
-            while (Console.WindowHeight < 18 || Console.WindowWidth < 49) Thread.Sleep(50);
+            if (wantBigger) Console.WriteLine("Window width must be at least 96.\nWindow height must be at least 36.");
+            else Console.WriteLine("Window width must be at least 48.\nWindow height must be at least 18.");
+            while (
+                (!wantBigger && (Console.WindowHeight < 18 || Console.WindowWidth < 48)) ||
+                (wantBigger && (Console.WindowHeight < 36 || Console.WindowWidth < 96))
+                )
+            {
+                Console.Title = $"w: {Console.WindowWidth} h: {Console.WindowHeight}";
+                Thread.Sleep(50);
+            }
         }
 
         private static readonly char[] validChars = { '▀', '▄', '█', ' ' };

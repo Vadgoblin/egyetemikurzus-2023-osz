@@ -9,7 +9,8 @@ static class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
-
+        Console.ReadLine();
+        BA.Start();
         var canvas = new Canvas(1920, 1080);
         var shapeHistory = new List<BaseShape>();
 
@@ -115,6 +116,7 @@ static class Program
                     else if (input == "ba")
                     {
                         BA.Start();
+                        Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
                         needFullRedraw = true;
                     }
                     else if (input == "q" || input == "quit" || input == "exit") return;

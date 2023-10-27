@@ -1,22 +1,7 @@
-﻿using System.Drawing;
-using System;
-
-namespace E394KZ.Shapes
+﻿namespace E394KZ.Shapes
 {
     internal record Triangle : BaseShape
     {
-        private class Point
-        {
-            public int X { get; set; }
-            public int Y { get; set; }
-
-            public Point(uint x, uint y)
-            {
-                X = (int)x;
-                Y = (int)y;
-            }
-        }
-
         public uint V1X => X;
         public uint V1Y => Y;
 
@@ -115,7 +100,6 @@ namespace E394KZ.Shapes
             }
             return -1;
         }
-
 
         public override string GetShapeName()
         {

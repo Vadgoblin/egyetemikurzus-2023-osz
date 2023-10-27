@@ -128,29 +128,6 @@ namespace E394KZ
                     Console.ResetColor();
                 }
             }
-
-            //for (uint hindex = HorizontalOffset; hindex < HorizontalOffset + (Console.WindowHeight - 4) * 2 && hindex < canvas.Height; hindex += 2)
-            //{
-            //    for (uint windex = VerticalOffset; windex < VerticalOffset + Console.WindowWidth - 27 && windex < canvas.Height; windex++)
-            //    {
-            //        var upper = canvas[windex, hindex] ?? BackgroundColor;
-            //        var lower = canvas[windex, hindex + 1] ?? BackgroundColor;
-
-            //        if (upper == lower)
-            //        {
-            //            Console.BackgroundColor = upper;
-            //            Console.Write(' ');
-            //        }
-            //        else
-            //        {
-            //            Console.ForegroundColor = upper;
-            //            Console.BackgroundColor = lower;
-            //            Console.Write('▀');
-            //        }
-            //    }
-            //    Console.ResetColor();
-            //    Console.SetCursorPosition(1, line++);
-            //}
         }
         public static void DrawLastShapes(List<BaseShape> shapeHistory)
         {

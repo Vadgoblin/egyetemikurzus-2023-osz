@@ -26,6 +26,11 @@
         : base($"\"{name}\" is invalid name for a shape", "InvalidNameException") { }
     }
 
+    class CoordinateOutOfCanvas : Exception
+    {
+        public CoordinateOutOfCanvas(){}
+    }
+
     class WindowsTooSmallException : Exception
     {
         public WindowsTooSmallException():base(){}

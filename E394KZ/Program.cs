@@ -36,7 +36,7 @@ static class Program
                 {
                     if (IsStringStartingWidthShape(input.ToLower()))
                     {
-                        var shape = ShapeParser(input, shapeHistory);
+                        var shape = ShapeParser(input, shapeHistory,canvas.Width,canvas.Height);
                         canvas.Draw(shape);
                         shapeHistory.Add(shape);
                     }
@@ -138,6 +138,14 @@ static class Program
             {
                 GUI.DrawMsgbox(ex.Message, "InvalidArgumentumCountException");
             }
+            catch (CoordinateOutOfCanvas)
+            {
+                GUI.DrawMsgbox("Shape's all point must be within the canvas.", "CoordinateOutOfCanvas");
+            }
+            catch (LoadException ex)
+            {
+                GUI.DrawMsgbox(ex.Message, "LoadExceptiom");
+            }
         }
     }
     static bool IsStringStartingWidthShape(string text)
@@ -149,7 +157,7 @@ static class Program
         }
         return false;
     }
-    static BaseShape ShapeParser(string text, List<BaseShape> shapeHistory)
+    static BaseShape ShapeParser(string text, List<BaseShape> shapeHistory, uint canvasWidth, uint canvasHeight)
     {
         static string NameChecker(string name)
         {
@@ -170,6 +178,12 @@ static class Program
             );
             return $"{name}{countOfThatTypeOfShape + 1}";
         }
+        static uint StrToUint(string str,uint upperBound)
+        {
+            var isSuccesful = UInt32.TryParse(str, out var result);
+            if (!isSuccesful || result >= upperBound) throw new CoordinateOutOfCanvas();
+            return result;
+        }
 
         var textSplit = text.Split(' ');
 
@@ -182,36 +196,36 @@ static class Program
         {
             case "dot":
                 if (textSplit.Length != 5 && textSplit.Length != 4) throw new InvalidArgumentumCountException("dot", textSplit.Length);
-                x = Convert.ToUInt32(textSplit[1]);
-                y = Convert.ToUInt32(textSplit[2]);
+                x = StrToUint(textSplit[1], canvasWidth);
+                y = StrToUint(textSplit[2], canvasWidth);
                 color = ConsoleColorParser(textSplit[3]);
                 name = (textSplit.Length == 5) ? NameChecker(textSplit[4]) : GetAutoName(shapeHistory, "dot");
                 return new Dot(name, x, y, color);
 
             case "line":
                 if (textSplit.Length != 7 && textSplit.Length != 6) throw new InvalidArgumentumCountException("line", textSplit.Length);
-                x = Convert.ToUInt32(textSplit[1]);
-                y = Convert.ToUInt32(textSplit[2]);
-                var x2 = Convert.ToUInt32(textSplit[3]);
-                var y2 = Convert.ToUInt32(textSplit[4]);
+                x = StrToUint(textSplit[1], canvasWidth);
+                y = StrToUint(textSplit[2], canvasHeight);
+                var x2 = StrToUint(textSplit[3], canvasWidth);
+                var y2 = StrToUint(textSplit[4], canvasHeight);
                 color = ConsoleColorParser(textSplit[5]);
                 name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "line");
                 return new Line(name, x, y, x2, y2, color);
 
             case "rectangle":
                 if (textSplit.Length != 7 && textSplit.Length != 6) throw new InvalidArgumentumCountException("rectangle", textSplit.Length);
-                x = Convert.ToUInt32(textSplit[1]);
-                y = Convert.ToUInt32(textSplit[2]);
-                var width = Convert.ToUInt32(textSplit[3]);
-                var height = Convert.ToUInt32(textSplit[4]);
+                x = StrToUint(textSplit[1], canvasWidth);
+                y = StrToUint(textSplit[2], canvasHeight);
+                var width = StrToUint(textSplit[3], canvasWidth - x);
+                var height = StrToUint(textSplit[4], canvasHeight - y);
                 color = ConsoleColorParser(textSplit[5]);
                 name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "rectangle");
                 return new Rectangle(name, x, y, width, height, color);
 
             case "circle":
                 if (textSplit.Length != 6 && textSplit.Length != 5) throw new InvalidArgumentumCountException("circle", textSplit.Length);
-                x = Convert.ToUInt32(textSplit[1]);
-                y = Convert.ToUInt32(textSplit[2]);
+                x = StrToUint(textSplit[1], canvasWidth);
+                y = StrToUint(textSplit[2], canvasHeight);
                 var r = Convert.ToUInt32(textSplit[3]);
                 color = ConsoleColorParser(textSplit[4]);
                 name = (textSplit.Length == 6) ? NameChecker(textSplit[5]) : GetAutoName(shapeHistory, "circle");
@@ -219,12 +233,12 @@ static class Program
 
             case "triangle":
                 if (textSplit.Length != 9 && textSplit.Length != 8) throw new InvalidArgumentumCountException("triangle", textSplit.Length);
-                x = Convert.ToUInt32(textSplit[1]);
-                y = Convert.ToUInt32(textSplit[2]);
-                var v2x = Convert.ToUInt32(textSplit[3]);
-                var v2y = Convert.ToUInt32(textSplit[4]);
-                var v3x = Convert.ToUInt32(textSplit[5]);
-                var v3y = Convert.ToUInt32(textSplit[6]);
+                x = StrToUint(textSplit[1], canvasWidth);
+                y = StrToUint(textSplit[2], canvasHeight);
+                var v2x = StrToUint(textSplit[3], canvasWidth);
+                var v2y = StrToUint(textSplit[4], canvasHeight);
+                var v3x = StrToUint(textSplit[5], canvasWidth);
+                var v3y = StrToUint(textSplit[6], canvasHeight);
                 color = ConsoleColorParser(textSplit[7]);
                 name = (textSplit.Length == 9) ? NameChecker(textSplit[8]) : GetAutoName(shapeHistory, "triangle");
                 return new Triangle(name, x, y, v2x, v2y, v3x, v3y, color);
@@ -257,26 +271,19 @@ static class Program
         }
         catch//io problem maybe? idk
         {
-            GUI.DrawMsgbox("Save failed.", "Save");
+            GUI.DrawMsgbox("Save failed.", "Save error");
         }
     }
     static List<BaseShape> Load(string saveName)
     {
-        try
+        if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named \"{saveName}\".");
+        else
         {
-            if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named {saveName}.");
-            else
-            {
-                var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
+            var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
 
-                var loadedShapeHistory = JsonSerializer.Deserialize< List<BaseShape>> (jsonTExt);
+            var loadedShapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt);
 
-                return loadedShapeHistory == null ? throw new Exception() : (List<BaseShape>)loadedShapeHistory;
-            }
-        }
-        catch
-        {
-            throw new Exception();
+            return loadedShapeHistory == null ? throw new Exception() : loadedShapeHistory;
         }
     }
 }

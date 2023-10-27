@@ -39,4 +39,8 @@
     {
         public LoadException(string msg) : base(msg) { }
     }
+    class InvalidCharacterInNameException : Exception
+    {
+        public InvalidCharacterInNameException(string inWhatName) : base($"Invalid caharcter in {inWhatName}.") { }
+    }
 }

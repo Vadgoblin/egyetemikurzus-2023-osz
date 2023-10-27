@@ -2,6 +2,7 @@
 using E394KZ.Shapes;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 static class Program
 {
@@ -144,18 +145,27 @@ static class Program
             }
             catch (LoadException ex)
             {
-                GUI.DrawMsgbox(ex.Message, "LoadExceptiom");
+                GUI.DrawMsgbox(ex.Message, "LoadException");
+            }
+            catch (InvalidCharacterInNameException ex)
+            {
+                GUI.DrawMsgbox(ex.Message, "InvalidCharacterInNameException");
             }
         }
     }
     static bool IsStringStartingWidthShape(string text)
     {
-        var prefixArray = new string[] { "dot", "line", "circle", "rectangle", "triangle" };
+        var prefixArray = new string[] { "dot ", "line ", "circle ", "rectangle ", "triangle " };
         foreach (var prefix in prefixArray)
         {
             if (text.StartsWith(prefix)) return true;
         }
         return false;
+    }
+    static bool ContainsInvalidCharacter(string text)
+    {
+        string validCharsPattern = @"^[a-zA-Z0-9_.-]+$";
+        return !Regex.IsMatch(text, validCharsPattern);
     }
     static BaseShape ShapeParser(string text, List<BaseShape> shapeHistory, uint canvasWidth, uint canvasHeight)
     {
@@ -260,6 +270,7 @@ static class Program
 
     static void Save(List<BaseShape> shapeHistory, string saveName)
     {
+        if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("save name");
         try
         {
             if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
@@ -276,6 +287,7 @@ static class Program
     }
     static List<BaseShape> Load(string saveName)
     {
+        if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("load name");
         if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named \"{saveName}\".");
         else
         {

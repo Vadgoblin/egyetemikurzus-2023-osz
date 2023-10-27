@@ -13,12 +13,6 @@ namespace E394KZ
             var totalShapeCount = shapeHistory.Count;
             var totalAffectedPixelCount = GetAffectedPixelCount(shapeHistory, canvasWidth, canvasHeight);
 
-            //foreach (var a in top5LargesShape) { Console.WriteLine($"{a.Key} {a.Value}"); }
-            //foreach (var a in top5colorCount) { Console.WriteLine($"{a.Key} {a.Value}"); }
-            //Console.WriteLine(totalShapeCount);
-            //Console.WriteLine(totalAffectedPixelCount);
-            //Console.ReadLine();
-
             return new string[] {
                 $"   Top 5 larges shape:        Top 5 shape color:      ",
                 $"1. {top5LargesShape[0].PadRight(26)} {top5colorCount[0]}",
@@ -32,8 +26,6 @@ namespace E394KZ
                 $"Affected pixels on the canvas: {totalAffectedPixelCount}",
             };
         }
-
-
         private static async Task GetShapeArea(BaseShape shape,uint canvasWidth,uint canvasHeight)
         {
             var tmpCanvas = new Canvas(canvasWidth, canvasHeight);
@@ -122,7 +114,6 @@ namespace E394KZ
 
             return affectedPixels;
         }
-
         private static string LimitStringLength(string input, int maxLength)
         {
             if (input.Length > maxLength)

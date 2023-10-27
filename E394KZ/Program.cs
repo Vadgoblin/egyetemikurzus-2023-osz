@@ -8,9 +8,6 @@ static class Program
 {
     static void Main()
     {
-        Console.WindowWidth = 120;
-        Console.WindowHeight = 30;
-        Console.WriteLine($"{Console.WindowWidth} {Console.WindowHeight}");
         Console.OutputEncoding = Encoding.UTF8;
 
         var canvas = new Canvas(1920, 1080);
@@ -299,7 +296,7 @@ static class Program
 
             var loadedShapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt);
 
-            return loadedShapeHistory == null ? throw new Exception() : loadedShapeHistory;
+            return loadedShapeHistory ?? throw new Exception();
         }
     }
 }

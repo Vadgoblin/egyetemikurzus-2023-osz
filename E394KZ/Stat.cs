@@ -68,7 +68,6 @@ namespace E394KZ
             List<string> stringList = size
             .OrderByDescending(kvp => kvp.Value)
             .Take(5)
-            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
             .Select(kvp => $"{LimitStringLength(kvp.Key.Name,12)} ({kvp.Value})")
             .ToList();
 
@@ -87,7 +86,6 @@ namespace E394KZ
             .ToDictionary(group => group.Key, group => group.Count())
             .OrderByDescending(kv => kv.Value)
             .Take(5)
-            .ToDictionary(kv => kv.Key, kv => (uint)kv.Value)
             .Select(kvp => $"{kvp.Key} ({kvp.Value})")
             .ToList();
 

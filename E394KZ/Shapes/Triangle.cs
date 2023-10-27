@@ -33,64 +33,90 @@ namespace E394KZ.Shapes
             V3X = v3x;
             V3Y = v3y;
         }
-        //public Triangle(string name, uint v1x, uint v1y, uint v2x, uint v2y, uint v3x, uint v3y, ConsoleColor color) : this(name, v1x, v1y, color, v2x, v2y, v3x, v3y) { }
 
         public override void Draw(Canvas canvas)
         {
-            Point p1 = new Point(V1X, V1Y);
-            Point p2 = new Point(V2X, V2Y);
-            Point p3 = new Point(V3X, V3Y);
+            var grid = new bool[canvas.Width, canvas.Height];
 
-            // Sort the vertices by y-coordinate to ensure p1 is the top vertex, p2 is the middle, and p3 is the bottom
-            if (p2.Y < p1.Y)
-                Swap(ref p1, ref p2);
-            if (p3.Y < p1.Y)
-                Swap(ref p1, ref p3);
-            if (p3.Y < p2.Y)
-                Swap(ref p2, ref p3);
+            DrawLine(grid, (int)V1X, (int)V1Y, (int)V2X, (int)V2Y);
+            DrawLine(grid, (int)V1X, (int)V1Y, (int)V3X, (int)V3Y);
+            DrawLine(grid, (int)V2X, (int)V2Y, (int)V3X, (int)V3Y);
 
-            // Calculate the slopes of the two lines
-            float invSlope1 = (float)(p2.X - p1.X) / (p2.Y - p1.Y);
-            float invSlope2 = (float)(p3.X - p1.X) / (p3.Y - p1.Y);
-
-            // Initialize the starting and ending x-coordinates for the two lines
-            float curX1 = p1.X;
-            float curX2 = p1.X;
-
-            for (int scanlineY = p1.Y; scanlineY <= p2.Y; scanlineY++)
+            for(int y = 0; y < canvas.Height; y++)
             {
-                DrawHorizontalLine(canvas, (int)curX1, (int)curX2, scanlineY, Color);
-                curX1 += invSlope1;
-                curX2 += invSlope2;
-            }
+                int first = FindFirstTrueIndex(grid, y);
+                int last = FindLastTrueIndex(grid, y);
 
-            // Calculate the new slope for the bottom line
-            invSlope1 = (float)(p3.X - p2.X) / (p3.Y - p2.Y);
-            curX1 = p2.X;
-
-            for (int scanlineY = p2.Y + 1; scanlineY <= p3.Y; scanlineY++)
-            {
-                DrawHorizontalLine(canvas, (int)curX1, (int)curX2, scanlineY, Color);
-                curX1 += invSlope1;
-                curX2 += invSlope2;
-            }
-        }
-        private void DrawHorizontalLine(Canvas canvas, int x1, int x2, int y, ConsoleColor color)
-        {
-            for (int x = x1; x <= x2; x++)
-            {
-                if (x >= 0 && x < canvas.Width && y >= 0 && y < canvas.Height)
+                if (first != last)
                 {
-                    canvas[(uint)x, (uint)y] = color;
+                    for(int x = first; x < last; x++)
+                    {
+                        grid[x,y] = true;
+                    }
+                }
+            }
+
+            for (int x = 0; x < canvas.Width; x++)
+            {
+                for (int y = 0; y < canvas.Height; y++)
+                {
+                    if (grid[x, y])
+                    {
+                        canvas[(uint)x, (uint)y] = Color;
+                    }
                 }
             }
         }
-        static void Swap(ref Point p1, ref Point p2)
+
+        private static void DrawLine(bool[,] grid, int x1, int y1, int x2, int y2)
         {
-            Point temp = p1;
-            p1 = p2;
-            p2 = temp;
+            int dx = Math.Abs(x2 - x1);
+            int dy = Math.Abs(y2 - y1);
+            int sx = (x1 < x2) ? 1 : -1;
+            int sy = (y1 < y2) ? 1 : -1;
+
+            int err = dx - dy;
+            int currentX = x1;
+            int currentY = y1;
+
+            while (true)
+            {
+                grid[currentX, currentY] = true;
+
+                if (currentX == x2 && currentY == y2)
+                    break;
+
+                int err2 = 2 * err;
+                if (err2 > -dy)
+                {
+                    err -= dy;
+                    currentX += sx;
+                }
+                if (err2 < dx)
+                {
+                    err += dx;
+                    currentY += sy;
+                }
+            }
         }
+        private static int FindFirstTrueIndex(bool[,] grid,int y)
+        {
+            for(int i = 0; i < grid.GetLength(1); i++)
+            {
+                if (grid[i, y] == true) return i;
+            }
+            return -1;
+        }
+        private static int FindLastTrueIndex(bool[,] grid, int y)
+        {
+            for (int i = grid.GetLength(1)-1; i >=1 ; i--)
+            {
+                if (grid[i, y] == true) return i;
+            }
+            return -1;
+        }
+
+
         public override string GetShapeName()
         {
             return "triangle";

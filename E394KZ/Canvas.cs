@@ -6,8 +6,8 @@ namespace E394KZ
     {
         private ConsoleColor?[,] ColorArray { get; set; }
 
-        public int Width => ColorArray.GetLength(0);
-        public int Height => ColorArray.GetLength(1);
+        public uint Width => (uint)ColorArray.GetLength(0);
+        public uint Height => (uint)ColorArray.GetLength(1);
 
         public Canvas(uint width, uint height) 
         {

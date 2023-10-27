@@ -1,11 +1,9 @@
 ﻿using E394KZ.Shapes;
-using System.Runtime.CompilerServices;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace E394KZ
 {
-    internal class GUI
+    internal static class GUI
     {
         public static uint Xoffset { get; private set; } = 0 ;
         public static uint Yoffset { get; private set; } = 0 ;
@@ -328,9 +326,9 @@ namespace E394KZ
                 Console.SetCursorPosition(x, y + textboxHeight - 1);
                 Console.Write(sb.ToString());
 
-                int xoffset = (textboxWidth - 2) / 2 - ("Help".Length) / 2;
+                int xoffset = (textboxWidth - 2) / 2 - (title.Length) / 2;
                 Console.SetCursorPosition(x + 1 + xoffset, y + 1);
-                Console.Write("Help");
+                Console.Write(title);
 
                 for (int i = 0; i < messange.Length; i++)
                 {

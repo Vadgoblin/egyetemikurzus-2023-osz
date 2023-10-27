@@ -3,7 +3,7 @@ using E394KZ.Shapes;
 using System.Text;
 using System.Text.Json;
 
-class Program
+static class Program
 {
     static void Main()
     {
@@ -30,7 +30,6 @@ class Program
                     GUI.DrawLastShapes(shapeHistory);
                     GUI.DrawPrompt();
                 }
-
                 var input = Console.ReadLine() ?? "";
 
                 if (input != "")
@@ -66,7 +65,10 @@ class Program
                         shapeHistory.Clear();
                         needFullRedraw = true;
                     }
-                    else if (input.StartsWith("stat")) ;
+                    else if (input.StartsWith("stat"))
+                    {
+                        GUI.DrawTextbox(Stat.GetStat(shapeHistory, canvas.Width, canvas.Height),"Stat");
+                    }
                     else if (input.StartsWith("save"))
                     {
                         if (shapeHistory.Count == 0)
@@ -253,7 +255,7 @@ class Program
 
             GUI.DrawMsgbox("Save succesfull.", "Save",false);
         }
-        catch(Exception ex)//io problem maybe? idk
+        catch//io problem maybe? idk
         {
             GUI.DrawMsgbox("Save failed.", "Save");
         }
@@ -272,7 +274,7 @@ class Program
                 return loadedShapeHistory == null ? throw new Exception() : (List<BaseShape>)loadedShapeHistory;
             }
         }
-        catch(Exception e)
+        catch
         {
             throw new Exception();
         }

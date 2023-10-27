@@ -49,7 +49,7 @@ namespace E394KZ
                 asd += (1000 / (double)30);
                 while (w.ElapsedMilliseconds < asd) ;
                 Console.SetCursorPosition(0, 0);
-                Console.Write(s.ToString().Substring(0, s.ToString().Length-1));
+                Console.Write(s.ToString()[..^1]);
                 s.Clear();
             }
             Console.ResetColor();

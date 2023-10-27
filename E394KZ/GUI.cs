@@ -344,7 +344,8 @@ namespace E394KZ
                 "    stat: statisztika megjelenítése",
                 "    save {name}: alakzatok mengése {name} néven",
                 "    load {name}: {name} néven mentett alakzatok betöltése",
-                "    offset {x} {y}: megjelenítési eltolás megváltoztatása"
+                "    offset {x} {y}: megjelenítési eltolás megváltoztatása",
+                "    ba: ?"
             };
 
             DrawTextbox(helpText, "Help");

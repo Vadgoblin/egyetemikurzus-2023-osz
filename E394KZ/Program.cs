@@ -37,7 +37,7 @@ static class Program
                 {
                     if (IsStringStartingWidthShape(input.ToLower()))
                     {
-                        var shape = ShapeParser(input, shapeHistory,canvas.Width,canvas.Height);
+                        var shape = ShapeParser(input, shapeHistory, canvas.Width, canvas.Height);
                         canvas.Draw(shape);
                         shapeHistory.Add(shape);
                     }
@@ -68,7 +68,7 @@ static class Program
                     }
                     else if (input.StartsWith("stat"))
                     {
-                        GUI.DrawTextbox(Stat.GetStat(shapeHistory, canvas.Width, canvas.Height),"Stat");
+                        GUI.DrawTextbox(Stat.GetStat(shapeHistory, canvas.Width, canvas.Height), "Stat");
                     }
                     else if (input.StartsWith("save"))
                     {
@@ -111,6 +111,11 @@ static class Program
 
                         GUI.ChangeOffset(x, y);
                         Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
+                    }
+                    else if (input == "ba")
+                    {
+                        BA.Start();
+                        needFullRedraw = true;
                     }
                     else if (input == "q" || input == "quit" || input == "exit") return;
 

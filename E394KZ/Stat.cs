@@ -15,11 +15,11 @@ namespace E394KZ
 
             return new string[] {
                 $"   Top 5 larges shape:        Top 5 shape color:      ",
-                $"1. {top5LargesShape[0].PadRight(26)} {top5colorCount[0]}",
-                $"2. {top5LargesShape[1].PadRight(26)} {top5colorCount[1]}",
-                $"3. {top5LargesShape[2].PadRight(26)} {top5colorCount[2]}",
-                $"4. {top5LargesShape[3].PadRight(26)} {top5colorCount[3]}",
-                $"5. {top5LargesShape[4].PadRight(26)} {top5colorCount[4]}",
+                $"1. {top5LargesShape[0],-26} {top5colorCount[0]}",
+                $"2. {top5LargesShape[1],-26} {top5colorCount[1]}",
+                $"3. {top5LargesShape[2],-26} {top5colorCount[2]}",
+                $"4. {top5LargesShape[3],-26} {top5colorCount[3]}",
+                $"5. {top5LargesShape[4],-26} {top5colorCount[4]}",
                 $"",
 
                 $"Shape count: {totalShapeCount}",
@@ -118,7 +118,7 @@ namespace E394KZ
         {
             if (input.Length > maxLength)
             {
-                return input.Substring(0, maxLength);
+                return input[..maxLength];
             }
             else
             {

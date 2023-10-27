@@ -8,6 +8,9 @@ static class Program
 {
     static void Main()
     {
+        Console.WindowWidth = 120;
+        Console.WindowHeight = 30;
+        Console.WriteLine($"{Console.WindowWidth} {Console.WindowHeight}");
         Console.OutputEncoding = Encoding.UTF8;
 
         var canvas = new Canvas(1920, 1080);

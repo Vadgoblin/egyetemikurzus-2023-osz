@@ -27,7 +27,7 @@ namespace E394KZ
             Console.CursorVisible = false;
             Console.SetCursorPosition(0, 0);
             var sb = new StringBuilder();
-            sb.Append("┏");
+            sb.Append('┏');
             for (int i = 0; i < Console.WindowWidth - 2; i++)
             {
                 sb.Append('━');
@@ -44,7 +44,7 @@ namespace E394KZ
                 Console.Write('┃');
             }
 
-            sb.Append("┗");
+            sb.Append('┗');
             for (int i = 0; i < Console.WindowWidth - 2; i++)
             {
                 sb.Append('━');
@@ -55,7 +55,7 @@ namespace E394KZ
 
 
             Console.SetCursorPosition(0, Console.WindowHeight - 3);
-            sb.Append("┣");
+            sb.Append('┣');
             for (int i = 0; i < Console.WindowWidth - 2; i++)
             {
                 sb.Append('━');
@@ -87,7 +87,7 @@ namespace E394KZ
             Console.SetCursorPosition(1, Console.WindowHeight - 2);
 
             var sb = new StringBuilder();
-            for (uint i = 0; i < Console.WindowWidth - 3; i++) sb.Append(" ");
+            for (uint i = 0; i < Console.WindowWidth - 3; i++) sb.Append(' ');
 
             Console.Write(">" + sb.ToString());
 
@@ -138,7 +138,7 @@ namespace E394KZ
                 else
                 {
                     var text = $"{shapeHistory[shapeHistory.Count - 1 - i].Name}";
-                    if (text.Length > 24) text = text.Substring(0, 24);
+                    if (text.Length > 24) text = text[..24];
                     else for (int j = text.Length; j < 24; j++) text += " ";
                     Console.Write(text);
                 }
@@ -162,11 +162,11 @@ namespace E394KZ
 
             if (Console.WindowWidth - 27 < messange.Length + 4)
             {
-                messange = messange.Substring(0, Console.WindowWidth - 31);
+                messange = messange[..(Console.WindowWidth - 31)];
             }
             if (Console.WindowWidth - 27 < title.Length + 4)
             {
-                title = title.Substring(0, Console.WindowWidth - 31);
+                title = title[..(Console.WindowWidth - 31)];
             }
 
             var width = Math.Max(messange.Length, title.Length + 2) + 2;
@@ -176,20 +176,20 @@ namespace E394KZ
             var y = (Console.WindowHeight - 4) / 2 - height / 2;
 
             var sb = new StringBuilder();
-            sb.Append("╭");
+            sb.Append('╭');
             for (int i = 0; i < width - 2; i++)
             {
-                sb.Append("─");
+                sb.Append('─');
             }
             sb.Append('╮');
             Console.SetCursorPosition(x, y);
             Console.Write(sb.ToString());
             sb.Clear();
 
-            sb.Append("│");
+            sb.Append('│');
             for (int i = 0; i < width - 2; i++)
             {
-                sb.Append(" ");
+                sb.Append(' ');
             }
             sb.Append('│');
             var vertical = sb.ToString();
@@ -198,10 +198,10 @@ namespace E394KZ
             Console.SetCursorPosition(x, y + 1);
             Console.Write(vertical);
 
-            sb.Append("├");
+            sb.Append('├');
             for (int i = 0; i < width - 2; i++)
             {
-                sb.Append("─");
+                sb.Append('─');
             }
             sb.Append('┤');
             Console.SetCursorPosition(x, y + 2);
@@ -214,10 +214,10 @@ namespace E394KZ
                 Console.Write(vertical);
             }
 
-            sb.Append("╰");
+            sb.Append('╰');
             for (int i = 0; i < width - 2; i++)
             {
-                sb.Append("─");
+                sb.Append('─');
             }
             sb.Append('╯');
             Console.SetCursorPosition(x, y + height - 1);
@@ -256,20 +256,20 @@ namespace E394KZ
                 var y = (Console.WindowHeight - 2 - textboxHeight) / 2;
 
                 var sb = new StringBuilder();
-                sb.Append("╭");
+                sb.Append('╭');
                 for (int i = 0; i < textboxWidth - 2; i++)
                 {
-                    sb.Append("─");
+                    sb.Append('─');
                 }
                 sb.Append('╮');
                 Console.SetCursorPosition(x, y);
                 Console.Write(sb.ToString());
                 sb.Clear();
 
-                sb.Append("│");
+                sb.Append('│');
                 for (int i = 0; i < textboxWidth - 2; i++)
                 {
-                    sb.Append(" ");
+                    sb.Append(' ');
                 }
                 sb.Append('│');
                 var vertical = sb.ToString();
@@ -278,10 +278,10 @@ namespace E394KZ
                 Console.SetCursorPosition(x, y + 1);
                 Console.Write(vertical);
 
-                sb.Append("├");
+                sb.Append('├');
                 for (int i = 0; i < textboxWidth - 2; i++)
                 {
-                    sb.Append("─");
+                    sb.Append('─');
                 }
                 sb.Append('┤');
                 Console.SetCursorPosition(x, y + 2);
@@ -294,10 +294,10 @@ namespace E394KZ
                     Console.Write(vertical);
                 }
 
-                sb.Append("╰");
+                sb.Append('╰');
                 for (int i = 0; i < textboxWidth - 2; i++)
                 {
-                    sb.Append("─");
+                    sb.Append('─');
                 }
                 sb.Append('╯');
                 Console.SetCursorPosition(x, y + textboxHeight - 1);

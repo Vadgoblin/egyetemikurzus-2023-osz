@@ -14,7 +14,6 @@ static class Program
         var canvas = new Canvas(1920, 1080);
         var shapeHistory = new ShapeHistory();
 
-        GUI.RedrawScreen(canvas,shapeHistory);
         while (true)
         {
             Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";

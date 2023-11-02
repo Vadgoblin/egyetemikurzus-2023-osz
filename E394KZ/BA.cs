@@ -25,7 +25,7 @@ namespace E394KZ
             
             var magicConstant = File.ReadAllBytes($"bincodedmagicconstant{(wantBigger ? "bigger":"")}.bin");
             /*
-             * Imagine if it were a hardcoded byte array.
+             * Pretend if it were a hardcoded byte array.
              * The reason why is's in a file is because its a tiny little bit big and poor VS would have a hard time handling it.
              * In other words, it would slow down VS and make it eat all of your ram .
              */

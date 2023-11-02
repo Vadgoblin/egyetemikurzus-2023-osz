@@ -1,5 +1,4 @@
-﻿using E394KZ.Shapes;
-using System.Text;
+﻿using System.Text;
 
 namespace E394KZ
 {
@@ -142,16 +141,6 @@ namespace E394KZ
                     else for (int j = text.Length; j < 24; j++) text += " ";
                     Console.Write(text);
                 }
-            }
-        }
-        private static void ClearLastShapes()
-        {
-            for (int i = 0; i < Console.WindowHeight - 6; i++)
-            {
-                Console.SetCursorPosition(Console.WindowWidth - 25, 3 + i);
-                var text = "";
-                for (int j = text.Length; j < 24; j++) text += " ";
-                Console.Write(text);
             }
         }
         public static void DrawMsgbox(string messange, string title,bool error = true)

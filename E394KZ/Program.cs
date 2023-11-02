@@ -2,8 +2,6 @@
 using E394KZ.Exceptions;
 using E394KZ.Shapes;
 using System.Text;
-using System.Text.Json;
-using System.Text.RegularExpressions;
 
 static class Program
 {

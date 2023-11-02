@@ -23,7 +23,7 @@ namespace E394KZ
         }
         public static void DrawFrame()
         {
-            if (IsWindowTooSmall()) throw new WindowsTooSmallException();
+            if (IsWindowTooSmall()) throw new Exceptions.WindowsTooSmallException();
             Console.CursorVisible = false;
             Console.SetCursorPosition(0, 0);
             var sb = new StringBuilder();
@@ -156,7 +156,7 @@ namespace E394KZ
         }
         public static void DrawMsgbox(string messange, string title,bool error = true)
         {
-            if (IsWindowTooSmall()) throw new WindowsTooSmallException();
+            if (IsWindowTooSmall()) throw new Exceptions.WindowsTooSmallException();
             Console.CursorVisible = false;
             if(error) Console.ForegroundColor = ConsoleColor.Red;
 

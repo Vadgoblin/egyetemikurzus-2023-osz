@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
+﻿using System.Diagnostics;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace E394KZ
 {
@@ -27,7 +22,7 @@ namespace E394KZ
             /*
              * Pretend if it were a hardcoded byte array.
              * The reason why is's in a file is because its a tiny little bit big and poor VS would have a hard time handling it.
-             * In other words, it would slow down VS and make it eat all of your ram .
+             * In other words, it would slow down VS to a complete stop and make it eat all of your ram .
              */
 
 

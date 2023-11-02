@@ -15,23 +15,13 @@ static class Program
         var shapeHistory = new ShapeHistory();
 
         var lastSize = (Console.WindowWidth, Console.WindowHeight);
-        var needFullRedraw = false;
         Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
-        GUI.DrawFrame();
+        GUI.RedrawScreen(canvas,shapeHistory);
         while (true)
         {
             try
             {
-                if (needFullRedraw)
-                {
-                    GUI.RedrawScreen(canvas, shapeHistory);
-                }
-                else
-                {
-                    GUI.DrawCanvas(canvas);
-                    GUI.DrawLastShapes(shapeHistory);
-                    GUI.DrawPrompt();
-                }
+                GUI.RedrawScreen(canvas, shapeHistory);
                 var input = Console.ReadLine() ?? "";
 
                 if (input != "")
@@ -47,9 +37,6 @@ static class Program
                         if (shapeHistory.Count > 0)
                         {
                             shapeHistory.RemoveLast();
-                            canvas.Clear();
-                            canvas.Draw(shapeHistory);
-                            needFullRedraw = true;
                         }
                         else
                         {
@@ -59,13 +46,11 @@ static class Program
                     else if (input == "help")
                     {
                         GUI.ShowHelp();
-                        needFullRedraw = true;
                     }
                     else if (input == "clear")
                     {
                         canvas.Clear();
                         shapeHistory.Clear();
-                        needFullRedraw = true;
                     }
                     else if (input.StartsWith("stat"))
                     {
@@ -93,7 +78,6 @@ static class Program
                         shapeHistory.Load(inputSplit[1]);
                         canvas.Clear();
                         canvas.Draw(shapeHistory);
-                        needFullRedraw = true;
 
                     }
                     else if (input.StartsWith("offset"))
@@ -117,7 +101,6 @@ static class Program
                     {
                         BA.Start();
                         Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
-                        needFullRedraw = true;
                     }
                     else if (input == "q" || input == "quit" || input == "exit") return;
 
@@ -126,12 +109,11 @@ static class Program
                         GUI.DrawMsgbox($"Unknown command: \"{input}\"", "Input error");
                     }
 
-                    if (input.Length >= Console.WindowWidth - 3) needFullRedraw = true;
+                    if (input.Length >= Console.WindowWidth - 3);
                 }
                 else if (input == "" || lastSize != (Console.WindowWidth, Console.WindowHeight))
                 {
                     lastSize = (Console.WindowWidth, Console.WindowHeight);
-                    needFullRedraw = true;
                 }
             }
             catch (WindowsTooSmallException)
@@ -140,7 +122,6 @@ static class Program
                 Console.WriteLine("Window is too small!");
                 Console.WriteLine("It must be at least 11 character high and 50 character wide");
                 while (GUI.IsWindowTooSmall()) Thread.Sleep(50);
-                needFullRedraw = true;
             }
             catch (ShapeException ex)
             {

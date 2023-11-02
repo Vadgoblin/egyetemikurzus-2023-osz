@@ -21,7 +21,7 @@ namespace E394KZ
             DrawCanvas(canvas);
             DrawPrompt();
         }
-        public static void DrawFrame()
+        private static void DrawFrame()
         {
             if (IsWindowTooSmall()) throw new Exceptions.WindowsTooSmallException();
             Console.CursorVisible = false;
@@ -81,7 +81,7 @@ namespace E394KZ
             Console.SetCursorPosition(Console.WindowWidth - 26, 2);
             Console.Write(sb.ToString());
         }
-        public static void DrawPrompt()
+        private static void DrawPrompt()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(1, Console.WindowHeight - 2);
@@ -94,7 +94,7 @@ namespace E394KZ
             Console.SetCursorPosition(2, Console.WindowHeight - 2);
             Console.CursorVisible = true;
         }
-        public static void DrawCanvas(Canvas canvas)
+        private static void DrawCanvas(Canvas canvas)
         {
             Console.CursorVisible = false;
             int line = 1;
@@ -129,7 +129,7 @@ namespace E394KZ
                 }
             }
         }
-        public static void DrawLastShapes(ShapeHistory shapeHistory)
+        private static void DrawLastShapes(ShapeHistory shapeHistory)
         {
             for (int i = 0; i < Console.WindowHeight - 6 && i < shapeHistory.Count; i++)
             {
@@ -144,7 +144,7 @@ namespace E394KZ
                 }
             }
         }
-        public static void ClearLastShapes()
+        private static void ClearLastShapes()
         {
             for (int i = 0; i < Console.WindowHeight - 6; i++)
             {

@@ -14,11 +14,10 @@ static class Program
         var canvas = new Canvas(1920, 1080);
         var shapeHistory = new ShapeHistory();
 
-        var lastSize = (Console.WindowWidth, Console.WindowHeight);
-        Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
         GUI.RedrawScreen(canvas,shapeHistory);
         while (true)
         {
+            Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
             try
             {
                 GUI.RedrawScreen(canvas, shapeHistory);
@@ -110,10 +109,6 @@ static class Program
                     }
 
                     if (input.Length >= Console.WindowWidth - 3);
-                }
-                else if (input == "" || lastSize != (Console.WindowWidth, Console.WindowHeight))
-                {
-                    lastSize = (Console.WindowWidth, Console.WindowHeight);
                 }
             }
             catch (WindowsTooSmallException)

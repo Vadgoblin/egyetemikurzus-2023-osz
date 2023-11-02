@@ -6,7 +6,7 @@ namespace E394KZ
     {
         static readonly SemaphoreSlim semaphoreSlim = new(1, 1);
         private static Dictionary<BaseShape, uint>? size;
-        public static string[] GetStat(List<BaseShape> shapeHistory,uint canvasWidth, uint canvasHeight)
+        public static string[] GetStat(ShapeHistory shapeHistory,uint canvasWidth, uint canvasHeight)
         {
             var top5LargesShape = GetTop5largesShape(shapeHistory, canvasWidth, canvasHeight);
             var top5colorCount = GetTop5MostCommonShapeColor(shapeHistory);
@@ -50,7 +50,7 @@ namespace E394KZ
                 semaphoreSlim.Release();
             }
         }
-        private static List<string> GetTop5largesShape(List<BaseShape> shapeHistory, uint canvasWidth, uint canvasHeight)
+        private static List<string> GetTop5largesShape(ShapeHistory shapeHistory, uint canvasWidth, uint canvasHeight)
         {
             size = new Dictionary<BaseShape, uint>();
             var taskList = new List<Task>();
@@ -79,7 +79,7 @@ namespace E394KZ
             return stringList;
 
         }
-        private static List<string> GetTop5MostCommonShapeColor(List<BaseShape> shapeHistory)
+        private static List<string> GetTop5MostCommonShapeColor(ShapeHistory shapeHistory)
         {
             var fiveMostCommonShapeColorList = shapeHistory
             .GroupBy(shape => shape.Color)
@@ -96,7 +96,7 @@ namespace E394KZ
 
             return fiveMostCommonShapeColorList;
         }
-        private static uint GetAffectedPixelCount(List<BaseShape> shapeHistory, uint canvasWidth, uint canvasHeight)
+        private static uint GetAffectedPixelCount(ShapeHistory shapeHistory, uint canvasWidth, uint canvasHeight)
         {
             var tmpCanvas = new Canvas(canvasWidth, canvasHeight);
             tmpCanvas.Draw(shapeHistory);

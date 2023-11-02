@@ -13,7 +13,7 @@ namespace E394KZ
             Xoffset = x_offset;
             Yoffset = y_offset;
         }
-        public static void RedrawScreen(Canvas canvas, List<BaseShape> shapeHistory)
+        public static void RedrawScreen(Canvas canvas, ShapeHistory shapeHistory)
         {
             Console.Clear();
             DrawFrame();
@@ -129,7 +129,7 @@ namespace E394KZ
                 }
             }
         }
-        public static void DrawLastShapes(List<BaseShape> shapeHistory)
+        public static void DrawLastShapes(ShapeHistory shapeHistory)
         {
             for (int i = 0; i < Console.WindowHeight - 6 && i < shapeHistory.Count; i++)
             {

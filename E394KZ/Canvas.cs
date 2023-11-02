@@ -55,7 +55,7 @@ namespace E394KZ
         { 
             shape.Draw(this);
         }
-        public void Draw(List<BaseShape> shapeList)
+        public void Draw(ShapeHistory shapeList)
         {
             for(int i = shapeList.Count - 1 ; i >= 0; i--) Draw(shapeList[i]);
         }

@@ -12,7 +12,7 @@ static class Program
         Console.OutputEncoding = Encoding.UTF8;
 
         var canvas = new Canvas(1920, 1080);
-        var shapeHistory = new List<BaseShape>();
+        var shapeHistory = new ShapeHistory();
 
         var lastSize = (Console.WindowWidth, Console.WindowHeight);
         var needFullRedraw = false;
@@ -46,7 +46,7 @@ static class Program
                     {
                         if (shapeHistory.Count > 0)
                         {
-                            shapeHistory.RemoveAt(shapeHistory.Count - 1);
+                            shapeHistory.RemoveLast();
                             canvas.Clear();
                             canvas.Draw(shapeHistory);
                             needFullRedraw = true;
@@ -82,7 +82,7 @@ static class Program
                             var inputSplit = input.Split(' ');
                             if (inputSplit.Length != 2) throw new InvalidArgumentumCountException("save", inputSplit.Length);
 
-                            Save(shapeHistory, inputSplit[1]);
+                            shapeHistory.Save(inputSplit[1]);
                         }
                     }
                     else if (input.StartsWith("load"))
@@ -90,7 +90,7 @@ static class Program
                         var inputSplit = input.Split(' ');
                         if (inputSplit.Length != 2) throw new InvalidArgumentumCountException("load", inputSplit.Length);
 
-                        shapeHistory = Load(inputSplit[1]);
+                        shapeHistory.Load(inputSplit[1]);
                         canvas.Clear();
                         canvas.Draw(shapeHistory);
                         needFullRedraw = true;
@@ -174,7 +174,7 @@ static class Program
         string validCharsPattern = @"^[a-zA-Z0-9_.-]+$";
         return !Regex.IsMatch(text, validCharsPattern);
     }
-    static BaseShape ShapeParser(string text, List<BaseShape> shapeHistory, uint canvasWidth, uint canvasHeight)
+    static BaseShape ShapeParser(string text, ShapeHistory shapeHistory, uint canvasWidth, uint canvasHeight)
     {
         static string NameChecker(string name)
         {
@@ -186,7 +186,7 @@ static class Program
             if (ContainsInvalidCharacter(name)) throw new InvalidCharacterInNameException("shape nickname");
             return name;
         }
-        static string GetAutoName(List<BaseShape> shapeHistory, string shapename)
+        static string GetAutoName(ShapeHistory shapeHistory, string shapename)
         {
             int countOfThatTypeOfShape = shapeHistory.Count(shape => shape.GetShapeName() == shapename);
             var name = new String(
@@ -273,37 +273,6 @@ static class Program
         else
         {
             throw new InvalidColorException(colorString);
-        }
-    }
-
-    static void Save(List<BaseShape> shapeHistory, string saveName)
-    {
-        if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("save name");
-        try
-        {
-            if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
-
-            var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-            File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory, jsonOptions));
-
-            GUI.DrawMsgbox("Save succesfull.", "Save",false);
-        }
-        catch//io problem maybe? idk
-        {
-            GUI.DrawMsgbox("Save failed.", "Save error");
-        }
-    }
-    static List<BaseShape> Load(string saveName)
-    {
-        if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("load name");
-        if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named \"{saveName}\".");
-        else
-        {
-            var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
-
-            var loadedShapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt);
-
-            return loadedShapeHistory ?? throw new Exception();
         }
     }
 }

@@ -4,6 +4,9 @@ namespace E394KZ
 {
     internal static class GUI
     {
+        private static int lastWindowWidth = -1;
+        private static int lastWindowHeight = -1;
+
         public static uint Xoffset { get; private set; } = 0 ;
         public static uint Yoffset { get; private set; } = 0 ;
         public static ConsoleColor BackgroundColor { get; private set; } = ConsoleColor.Black;
@@ -14,7 +17,12 @@ namespace E394KZ
         }
         public static void RedrawScreen(Canvas canvas, ShapeHistory shapeHistory)
         {
-            Console.Clear();
+            if(lastWindowWidth != Console.WindowWidth || lastWindowHeight != Console.WindowHeight)
+            {
+                lastWindowWidth = Console.WindowWidth;
+                lastWindowHeight = Console.WindowHeight;
+                Console.Clear();
+            }
             DrawFrame();
             DrawLastShapes(shapeHistory);
             DrawCanvas(canvas);

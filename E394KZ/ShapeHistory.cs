@@ -51,7 +51,7 @@ namespace E394KZ
 
                 GUI.DrawMsgbox("Save succesfull.", "Save", false);
             }
-            catch//io problem maybe? idk
+            catch(IOException)
             {
                 GUI.DrawMsgbox("Save failed.", "Save error");
             }
@@ -63,9 +63,16 @@ namespace E394KZ
             if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named \"{saveName}\".");
             else
             {
-                var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
-
-                shapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt)??throw new Exception();
+                try
+                {
+                    var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
+                    shapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt) ?? throw new Exception();
+                }
+                catch (IOException)
+                {
+                    GUI.DrawMsgbox("Load failed.", "IOException");
+                }
+                
             }
         }
 

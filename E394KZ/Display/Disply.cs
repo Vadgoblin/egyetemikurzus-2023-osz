@@ -1,5 +1,4 @@
-﻿
-namespace E394KZ.Display
+﻿namespace E394KZ.Display
 {
     internal static class Disply
     {
@@ -24,7 +23,16 @@ namespace E394KZ.Display
                 Console.Clear();
             }
 
-            //for()
+            for (int y = 0; y < frame.Height && y < Console.WindowHeight; y++)
+            {
+                Console.SetCursorPosition(0, y);
+                for (int x = 0; x < frame.Width && x < Console.WindowWidth; x++)
+                {
+                    Console.ForegroundColor = frame[x, y].foregroundColor;
+                    Console.BackgroundColor = frame[x, y].backgroundColor;
+                    Console.Write(frame[x, y].letter);
+                }
+            }
         }
     }
 }

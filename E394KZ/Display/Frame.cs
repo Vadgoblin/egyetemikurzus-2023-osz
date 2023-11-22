@@ -14,10 +14,18 @@
 
         public Frame() : this((uint)Console.WindowWidth, (uint)Console.WindowHeight) { }
 
-        public CharacterUnit this[uint x, uint y]
+        public CharacterUnit this[int x, int y]
         {
             get => frame[x, y];
             set => frame[x, y] = value;
         } 
+
+        public void SetCharUnit(int x, int y, char c, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
+        {
+            if(x < 0 || y < 0 || x > Width || y > Height) throw new ArgumentOutOfRangeException();
+            frame[x,y].letter = c;
+            frame[x,y].backgroundColor = backgroundColor;
+            frame[x,y].foregroundColor = foregroundColor;
+        }
     }
 }

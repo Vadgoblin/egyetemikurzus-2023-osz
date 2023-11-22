@@ -9,9 +9,13 @@ static class Program
     static void Main()
     {
         var f = new Frame();
-        Console.WriteLine(""+f.Width+" "+f.Height);
-        Console.WriteLine(Console.WindowHeight);
 
+        f.SetCharUnit(0,0,'X',ConsoleColor.White, ConsoleColor.Red);
+
+        Disply.Draw(f);
+
+
+        Console.ReadLine();
         return;
 
 

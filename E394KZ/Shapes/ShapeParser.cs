@@ -21,16 +21,21 @@ namespace E394KZ.Shapes
         }
         static public BaseShape Parse(string text, ShapeHistory shapeHistory, uint canvasWidth, uint canvasHeight)
         {
-            static string NameChecker(string name)
+            static string NameChecker(string name, ShapeHistory shapeHistory)
             {
+                if (ContainsInvalidCharacter(name)) throw new InvalidCharacterInNameException("shape nickname");
                 if (IsStringStartingWidthShape(name.ToLower()))
                 {
                     var tmp = name.Replace("dot", "").Replace("line", "").Replace("circle", "").Replace("rectangle", "").Replace("triangle", "");
                     if (tmp.Length > 0 && char.IsDigit(tmp[0])) throw new InvalidNameException(name);
                 }
-                if (ContainsInvalidCharacter(name)) throw new InvalidCharacterInNameException("shape nickname");
+                else
+                {
+                    if (shapeHistory.Any(shape => shape.Name == name)) throw new NameAlreadyInUseException(name);
+                }
                 return name;
             }
+
             static string GetAutoName(ShapeHistory shapeHistory, string shapename)
             {
                 int countOfThatTypeOfShape = shapeHistory.Count(shape => shape.GetShapeName() == shapename);
@@ -62,7 +67,7 @@ namespace E394KZ.Shapes
                     x = StrToUint(textSplit[1], canvasWidth);
                     y = StrToUint(textSplit[2], canvasWidth);
                     color = ConsoleColorParser(textSplit[3]);
-                    name = (textSplit.Length == 5) ? NameChecker(textSplit[4]) : GetAutoName(shapeHistory, "dot");
+                    name = (textSplit.Length == 5) ? NameChecker(textSplit[4], shapeHistory) : GetAutoName(shapeHistory, "dot");
                     return new Dot(name, x, y, color);
 
                 case "line":
@@ -72,7 +77,7 @@ namespace E394KZ.Shapes
                     var x2 = StrToUint(textSplit[3], canvasWidth);
                     var y2 = StrToUint(textSplit[4], canvasHeight);
                     color = ConsoleColorParser(textSplit[5]);
-                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "line");
+                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "line");
                     return new Line(name, x, y, x2, y2, color);
 
                 case "rectangle":
@@ -82,7 +87,7 @@ namespace E394KZ.Shapes
                     var width = StrToUint(textSplit[3], canvasWidth - x);
                     var height = StrToUint(textSplit[4], canvasHeight - y);
                     color = ConsoleColorParser(textSplit[5]);
-                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6]) : GetAutoName(shapeHistory, "rectangle");
+                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "rectangle");
                     return new Rectangle(name, x, y, width, height, color);
 
                 case "circle":
@@ -91,7 +96,7 @@ namespace E394KZ.Shapes
                     y = StrToUint(textSplit[2], canvasHeight);
                     var r = Convert.ToUInt32(textSplit[3]);
                     color = ConsoleColorParser(textSplit[4]);
-                    name = (textSplit.Length == 6) ? NameChecker(textSplit[5]) : GetAutoName(shapeHistory, "circle");
+                    name = (textSplit.Length == 6) ? NameChecker(textSplit[5], shapeHistory) : GetAutoName(shapeHistory, "circle");
                     return new Circle(name, x, y, color, r);
 
                 case "triangle":
@@ -103,7 +108,7 @@ namespace E394KZ.Shapes
                     var v3x = StrToUint(textSplit[5], canvasWidth);
                     var v3y = StrToUint(textSplit[6], canvasHeight);
                     color = ConsoleColorParser(textSplit[7]);
-                    name = (textSplit.Length == 9) ? NameChecker(textSplit[8]) : GetAutoName(shapeHistory, "triangle");
+                    name = (textSplit.Length == 9) ? NameChecker(textSplit[8], shapeHistory) : GetAutoName(shapeHistory, "triangle");
                     return new Triangle(name, x, y, v2x, v2y, v3x, v3y, color);
                 default:
                     throw new Exception("this should never be called");

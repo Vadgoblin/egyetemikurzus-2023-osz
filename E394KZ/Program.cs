@@ -45,6 +45,15 @@ static class Program
             {
                 GUI.DrawMsgbox(ex.Message, "InvalidCharacterInNameException");
             }
+            catch (NameAlreadyInUseException ex)
+            {
+                GUI.DrawMsgbox(ex.Message, "NameAlreadyInUseException");
+            }
+            catch (Exception)
+            {
+                GUI.DrawMsgbox("Unknown error", "");
+                return;
+            }
         }
     }
 

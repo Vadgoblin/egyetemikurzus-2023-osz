@@ -57,7 +57,7 @@ namespace E394KZ
         }
         public void Draw(ShapeHistory shapeList)
         {
-            for(int i = shapeList.Count - 1 ; i >= 0; i--) Draw(shapeList[i]);
+            for(int i = 0 ; i < shapeList.Count; i++) Draw(shapeList[i]);
         }
 
         public void Clear()

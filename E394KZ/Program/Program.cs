@@ -8,7 +8,9 @@ static class Program
 {
     static void Main()
     {
-        CharacterUnit c = new CharacterUnit();
+        var f = new Frame();
+        Console.WriteLine(""+f.Width+" "+f.Height);
+        Console.WriteLine(Console.WindowHeight);
 
         return;
 

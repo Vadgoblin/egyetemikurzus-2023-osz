@@ -4,6 +4,9 @@
     {
         private readonly CharacterUnit[,] frame;
 
+        public int Width => frame.GetLength(0);
+        public int Height => frame.GetLength(1);
+
         public Frame(uint width, uint height)
         {
             frame = new CharacterUnit[width, height];

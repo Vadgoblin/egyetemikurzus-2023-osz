@@ -5,5 +5,11 @@
         public char letter;
         public ConsoleColor backgroundColor;
         public ConsoleColor foregroundColor;
+
+        public CharacterUnit()
+        {
+            backgroundColor = Console.BackgroundColor;
+            foregroundColor = Console.ForegroundColor;
+        }
     }
 }

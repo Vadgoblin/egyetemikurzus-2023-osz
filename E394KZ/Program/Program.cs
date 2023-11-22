@@ -1,12 +1,18 @@
-﻿using E394KZ;
-using E394KZ.Exceptions;
-using E394KZ.Shapes;
+﻿using E394KZ.Display;
+using E394KZ.Program;
+using E394KZ.Program.Exceptions;
+using E394KZ.Program.Shapes;
 using System.Text;
 
 static class Program
 {
     static void Main()
     {
+        CharacterUnit c = new CharacterUnit();
+
+        return;
+
+
         Console.OutputEncoding = Encoding.UTF8;
 
         var canvas = new Canvas(1920, 1080);

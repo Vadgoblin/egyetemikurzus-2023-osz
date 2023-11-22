@@ -1,7 +1,8 @@
-﻿using E394KZ.Exceptions;
+﻿using E394KZ.Program.Exceptions;
+using E394KZ.Program.Shapes;
 using System.Text.RegularExpressions;
 
-namespace E394KZ.Shapes
+namespace E394KZ.Program.Shapes
 {
     static internal class ShapeParser
     {
@@ -39,7 +40,7 @@ namespace E394KZ.Shapes
             static string GetAutoName(ShapeHistory shapeHistory, string shapename)
             {
                 int countOfThatTypeOfShape = shapeHistory.Count(shape => shape.GetShapeName() == shapename);
-                var name = new String(
+                var name = new string(
                     new[] { char.ToUpper(shapename.First()) }
                     .Concat(shapename.Skip(1))
                     .ToArray()
@@ -48,7 +49,7 @@ namespace E394KZ.Shapes
             }
             static uint StrToUint(string str, uint upperBound)
             {
-                var isSuccesful = UInt32.TryParse(str, out var result);
+                var isSuccesful = uint.TryParse(str, out var result);
                 if (!isSuccesful || result >= upperBound) throw new CoordinateOutOfCanvas();
                 return result;
             }
@@ -67,7 +68,7 @@ namespace E394KZ.Shapes
                     x = StrToUint(textSplit[1], canvasWidth);
                     y = StrToUint(textSplit[2], canvasWidth);
                     color = ConsoleColorParser(textSplit[3]);
-                    name = (textSplit.Length == 5) ? NameChecker(textSplit[4], shapeHistory) : GetAutoName(shapeHistory, "dot");
+                    name = textSplit.Length == 5 ? NameChecker(textSplit[4], shapeHistory) : GetAutoName(shapeHistory, "dot");
                     return new Dot(name, x, y, color);
 
                 case "line":
@@ -77,7 +78,7 @@ namespace E394KZ.Shapes
                     var x2 = StrToUint(textSplit[3], canvasWidth);
                     var y2 = StrToUint(textSplit[4], canvasHeight);
                     color = ConsoleColorParser(textSplit[5]);
-                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "line");
+                    name = textSplit.Length == 7 ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "line");
                     return new Line(name, x, y, x2, y2, color);
 
                 case "rectangle":
@@ -87,7 +88,7 @@ namespace E394KZ.Shapes
                     var width = StrToUint(textSplit[3], canvasWidth - x);
                     var height = StrToUint(textSplit[4], canvasHeight - y);
                     color = ConsoleColorParser(textSplit[5]);
-                    name = (textSplit.Length == 7) ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "rectangle");
+                    name = textSplit.Length == 7 ? NameChecker(textSplit[6], shapeHistory) : GetAutoName(shapeHistory, "rectangle");
                     return new Rectangle(name, x, y, width, height, color);
 
                 case "circle":
@@ -96,7 +97,7 @@ namespace E394KZ.Shapes
                     y = StrToUint(textSplit[2], canvasHeight);
                     var r = Convert.ToUInt32(textSplit[3]);
                     color = ConsoleColorParser(textSplit[4]);
-                    name = (textSplit.Length == 6) ? NameChecker(textSplit[5], shapeHistory) : GetAutoName(shapeHistory, "circle");
+                    name = textSplit.Length == 6 ? NameChecker(textSplit[5], shapeHistory) : GetAutoName(shapeHistory, "circle");
                     return new Circle(name, x, y, color, r);
 
                 case "triangle":
@@ -108,7 +109,7 @@ namespace E394KZ.Shapes
                     var v3x = StrToUint(textSplit[5], canvasWidth);
                     var v3y = StrToUint(textSplit[6], canvasHeight);
                     color = ConsoleColorParser(textSplit[7]);
-                    name = (textSplit.Length == 9) ? NameChecker(textSplit[8], shapeHistory) : GetAutoName(shapeHistory, "triangle");
+                    name = textSplit.Length == 9 ? NameChecker(textSplit[8], shapeHistory) : GetAutoName(shapeHistory, "triangle");
                     return new Triangle(name, x, y, v2x, v2y, v3x, v3y, color);
                 default:
                     throw new Exception("this should never be called");
@@ -116,7 +117,7 @@ namespace E394KZ.Shapes
         }
         private static ConsoleColor ConsoleColorParser(string colorString)
         {
-            if (Enum.TryParse<ConsoleColor>(colorString, true, out ConsoleColor color))
+            if (Enum.TryParse(colorString, true, out ConsoleColor color))
             {
                 return color;
             }

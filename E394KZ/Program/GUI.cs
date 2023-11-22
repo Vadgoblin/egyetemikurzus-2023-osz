@@ -1,14 +1,14 @@
 ﻿using System.Text;
 
-namespace E394KZ
+namespace E394KZ.Program
 {
     internal static class GUI
     {
         private static int lastWindowWidth = -1;
         private static int lastWindowHeight = -1;
 
-        public static uint Xoffset { get; private set; } = 0 ;
-        public static uint Yoffset { get; private set; } = 0 ;
+        public static uint Xoffset { get; private set; } = 0;
+        public static uint Yoffset { get; private set; } = 0;
         public static ConsoleColor BackgroundColor { get; private set; } = ConsoleColor.Black;
         public static void ChangeOffset(uint x_offset, uint y_offset)
         {
@@ -17,7 +17,7 @@ namespace E394KZ
         }
         public static void RedrawScreen(Canvas canvas, ShapeHistory shapeHistory)
         {
-            if(lastWindowWidth != Console.WindowWidth || lastWindowHeight != Console.WindowHeight)
+            if (lastWindowWidth != Console.WindowWidth || lastWindowHeight != Console.WindowHeight)
             {
                 lastWindowWidth = Console.WindowWidth;
                 lastWindowHeight = Console.WindowHeight;
@@ -105,8 +105,8 @@ namespace E394KZ
         {
             Console.CursorVisible = false;
             int line = 1;
-            
-            for(uint y = 0 ; y < Console.WindowHeight - 4; y++)
+
+            for (uint y = 0; y < Console.WindowHeight - 4; y++)
             {
                 Console.SetCursorPosition(1, line++);
                 for (uint x = 0; x < Console.WindowWidth - 27; x++)
@@ -116,7 +116,7 @@ namespace E394KZ
 
                     if (Xoffset + x < canvas.Width)
                     {
-                        if(Yoffset + y * 2 + 1 < canvas.Width) lower = canvas[Xoffset + x, Yoffset + y * 2 + 1] ?? BackgroundColor;
+                        if (Yoffset + y * 2 + 1 < canvas.Width) lower = canvas[Xoffset + x, Yoffset + y * 2 + 1] ?? BackgroundColor;
                         if (Yoffset + y * 2 < canvas.Width) upper = canvas[Xoffset + x, Yoffset + y * 2] ?? BackgroundColor;
                     }
 
@@ -151,11 +151,11 @@ namespace E394KZ
                 }
             }
         }
-        public static void DrawMsgbox(string messange, string title,bool error = true)
+        public static void DrawMsgbox(string messange, string title, bool error = true)
         {
             if (IsWindowTooSmall()) throw new Exceptions.WindowsTooSmallException();
             Console.CursorVisible = false;
-            if(error) Console.ForegroundColor = ConsoleColor.Red;
+            if (error) Console.ForegroundColor = ConsoleColor.Red;
 
             if (Console.WindowWidth - 27 < messange.Length + 4)
             {
@@ -220,11 +220,11 @@ namespace E394KZ
             Console.SetCursorPosition(x, y + height - 1);
             Console.Write(sb.ToString());
 
-            int xoffset = (width - 2) / 2 - (title.Length) / 2;
+            int xoffset = (width - 2) / 2 - title.Length / 2;
             Console.SetCursorPosition(x + 1 + xoffset, y + 1);
             Console.Write(title);
 
-            xoffset = ((width - 1) - messange.Length) / 2;
+            xoffset = (width - 1 - messange.Length) / 2;
             Console.SetCursorPosition(x + 1 + xoffset, y + 4);
             Console.Write(messange);
 
@@ -234,9 +234,9 @@ namespace E394KZ
         public static void DrawTextbox(string[] messange, string title)
         {
             Console.CursorVisible = false;
-            var textboxWidth = messange.Max(str => str.Length)+4;
+            var textboxWidth = messange.Max(str => str.Length) + 4;
             var textboxHeight = messange.Length + 4;
-            
+
             if (textboxWidth > Console.WindowWidth - 27 || textboxHeight > Console.WindowHeight - 4)
             {
                 Console.Clear();
@@ -247,7 +247,7 @@ namespace E394KZ
             }
             else
             {
-               
+
 
                 var x = (Console.WindowWidth - 25 - textboxWidth) / 2;
                 var y = (Console.WindowHeight - 2 - textboxHeight) / 2;
@@ -300,7 +300,7 @@ namespace E394KZ
                 Console.SetCursorPosition(x, y + textboxHeight - 1);
                 Console.Write(sb.ToString());
 
-                int xoffset = (textboxWidth - 2) / 2 - (title.Length) / 2;
+                int xoffset = (textboxWidth - 2) / 2 - title.Length / 2;
                 Console.SetCursorPosition(x + 1 + xoffset, y + 1);
                 Console.Write(title);
 
@@ -317,7 +317,7 @@ namespace E394KZ
         }
         public static bool IsWindowTooSmall()
         {
-            return (Console.WindowHeight < 11 || Console.WindowWidth < 50);
+            return Console.WindowHeight < 11 || Console.WindowWidth < 50;
         }
 
         public static void ShowHelp()

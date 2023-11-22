@@ -1,4 +1,4 @@
-﻿namespace E394KZ.Exceptions
+﻿namespace E394KZ.Program.Exceptions
 {
     class LoadException : Exception
     {

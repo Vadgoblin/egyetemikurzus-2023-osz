@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace E394KZ.Shapes
+namespace E394KZ.Program.Shapes
 {
     [JsonDerivedType(typeof(Dot), typeDiscriminator: "dot")]
     [JsonDerivedType(typeof(Line), typeDiscriminator: "line")]

@@ -1,10 +1,10 @@
-﻿using E394KZ.Exceptions;
-using E394KZ.Shapes;
+﻿using E394KZ.Program.Exceptions;
+using E394KZ.Program.Shapes;
 using System.Collections;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
-namespace E394KZ
+namespace E394KZ.Program
 {
     internal class ShapeHistory : IEnumerable<BaseShape>
     {
@@ -51,7 +51,7 @@ namespace E394KZ
 
                 GUI.DrawMsgbox("Save succesfull.", "Save", false);
             }
-            catch(IOException)
+            catch (IOException)
             {
                 GUI.DrawMsgbox("Save failed.", "Save error");
             }
@@ -72,7 +72,7 @@ namespace E394KZ
                 {
                     GUI.DrawMsgbox("Load failed.", "IOException");
                 }
-                
+
             }
         }
 

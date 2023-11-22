@@ -1,12 +1,12 @@
-﻿using E394KZ.Shapes;
+﻿using E394KZ.Program.Shapes;
 
-namespace E394KZ
+namespace E394KZ.Program
 {
     internal static class Stat
     {
         static readonly SemaphoreSlim semaphoreSlim = new(1, 1);
         private static Dictionary<BaseShape, uint>? size;
-        public static string[] GetStat(ShapeHistory shapeHistory,uint canvasWidth, uint canvasHeight)
+        public static string[] GetStat(ShapeHistory shapeHistory, uint canvasWidth, uint canvasHeight)
         {
             var top5LargesShape = GetTop5largesShape(shapeHistory, canvasWidth, canvasHeight);
             var top5colorCount = GetTop5MostCommonShapeColor(shapeHistory);
@@ -26,7 +26,7 @@ namespace E394KZ
                 $"Affected pixels on the canvas: {totalAffectedPixelCount}",
             };
         }
-        private static async Task GetShapeArea(BaseShape shape,uint canvasWidth,uint canvasHeight)
+        private static async Task GetShapeArea(BaseShape shape, uint canvasWidth, uint canvasHeight)
         {
             var tmpCanvas = new Canvas(canvasWidth, canvasHeight);
 
@@ -68,7 +68,7 @@ namespace E394KZ
             List<string> stringList = size
             .OrderByDescending(kvp => kvp.Value)
             .Take(5)
-            .Select(kvp => $"{LimitStringLength(kvp.Key.Name,12)} ({kvp.Value})")
+            .Select(kvp => $"{LimitStringLength(kvp.Key.Name, 12)} ({kvp.Value})")
             .ToList();
 
             while (stringList.Count < 5)
@@ -89,7 +89,7 @@ namespace E394KZ
             .Select(kvp => $"{kvp.Key} ({kvp.Value})")
             .ToList();
 
-            while(fiveMostCommonShapeColorList.Count < 5)
+            while (fiveMostCommonShapeColorList.Count < 5)
             {
                 fiveMostCommonShapeColorList.Add("");
             }
@@ -102,9 +102,9 @@ namespace E394KZ
             tmpCanvas.Draw(shapeHistory);
 
             uint affectedPixels = 0;
-            for(uint x = 0; x < canvasWidth; x++)
+            for (uint x = 0; x < canvasWidth; x++)
             {
-                for(uint y = 0; y < canvasHeight; y++)
+                for (uint y = 0; y < canvasHeight; y++)
                 {
                     if (tmpCanvas[x, y] != null) affectedPixels++;
                 }

@@ -1,4 +1,4 @@
-﻿namespace E394KZ.Shapes
+﻿namespace E394KZ.Program.Shapes
 {
     internal record Circle : BaseShape
     {

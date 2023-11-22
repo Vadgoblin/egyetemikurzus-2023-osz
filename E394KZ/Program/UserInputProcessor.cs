@@ -1,7 +1,7 @@
-﻿using E394KZ.Exceptions;
-using E394KZ.Shapes;
+﻿using E394KZ.Program.Exceptions;
+using E394KZ.Program.Shapes;
 
-namespace E394KZ
+namespace E394KZ.Program
 {
     static internal class UserInputProcessor
     {
@@ -54,7 +54,7 @@ namespace E394KZ
         }
         private static void Stat(ShapeHistory shapeHistory, Canvas canvas)
         {
-            GUI.DrawTextbox(E394KZ.Stat.GetStat(shapeHistory, canvas.Width, canvas.Height), "Stat");
+            GUI.DrawTextbox(Program.Stat.GetStat(shapeHistory, canvas.Width, canvas.Height), "Stat");
         }
         private static void Save(string input, ShapeHistory shapeHistory)
         {
@@ -70,7 +70,7 @@ namespace E394KZ
                 shapeHistory.Save(inputSplit[1]);
             }
         }
-        private static void Load(string input,ShapeHistory shapeHistory , Canvas canvas)
+        private static void Load(string input, ShapeHistory shapeHistory, Canvas canvas)
         {
             var inputSplit = input.Split(' ');
             if (inputSplit.Length != 2) throw new InvalidArgumentumCountException("load", inputSplit.Length);
@@ -88,10 +88,10 @@ namespace E394KZ
             var y = Convert.ToUInt32(inputSplit[2]);
 
             if (canvas.Width <= Console.WindowWidth - 27) x = 0;
-            else if (canvas.Width < x + Console.WindowWidth - 27) x = (uint)canvas.Width - ((uint)Console.WindowWidth - 27);
+            else if (canvas.Width < x + Console.WindowWidth - 27) x = canvas.Width - ((uint)Console.WindowWidth - 27);
 
             if (canvas.Height <= Console.WindowHeight - 4) y = 0;
-            else if (canvas.Height < y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
+            else if (canvas.Height < y + Console.WindowHeight - 4) y = canvas.Height - ((uint)Console.WindowHeight - 4);
 
             GUI.ChangeOffset(x, y);
             Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";

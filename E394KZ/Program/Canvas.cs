@@ -1,6 +1,6 @@
-﻿using E394KZ.Shapes;
+﻿using E394KZ.Program.Shapes;
 
-namespace E394KZ
+namespace E394KZ.Program
 {
     internal class Canvas
     {
@@ -9,7 +9,7 @@ namespace E394KZ
         public uint Width => (uint)ColorArray.GetLength(0);
         public uint Height => (uint)ColorArray.GetLength(1);
 
-        public Canvas(uint width, uint height) 
+        public Canvas(uint width, uint height)
         {
             ColorArray = new ConsoleColor?[width, height];
         }
@@ -42,9 +42,9 @@ namespace E394KZ
 
         public void Fill(ConsoleColor? color)
         {
-            for(uint i =  0; i < Width; i++)
+            for (uint i = 0; i < Width; i++)
             {
-                for(uint j  = 0; j < Height; j++)
+                for (uint j = 0; j < Height; j++)
                 {
                     this[i, j] = color;
                 }
@@ -52,21 +52,21 @@ namespace E394KZ
         }
 
         public void Draw(BaseShape shape)
-        { 
+        {
             shape.Draw(this);
         }
         public void Draw(ShapeHistory shapeList)
         {
-            for(int i = 0 ; i < shapeList.Count; i++) Draw(shapeList[i]);
+            for (int i = 0; i < shapeList.Count; i++) Draw(shapeList[i]);
         }
 
         public void Clear()
         {
-            for(int i =  0; i < Width; i++)
+            for (int i = 0; i < Width; i++)
             {
-                for(int j = 0; j < Height; j++)
+                for (int j = 0; j < Height; j++)
                 {
-                    ColorArray[i,j]= null;
+                    ColorArray[i, j] = null;
                 }
             }
         }

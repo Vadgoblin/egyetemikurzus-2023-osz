@@ -1,4 +1,4 @@
-﻿namespace E394KZ.Shapes
+﻿namespace E394KZ.Program.Shapes
 {
     internal record Triangle : BaseShape
     {
@@ -27,16 +27,16 @@
             DrawLine(grid, (int)V1X, (int)V1Y, (int)V3X, (int)V3Y);
             DrawLine(grid, (int)V2X, (int)V2Y, (int)V3X, (int)V3Y);
 
-            for(int y = 0; y < canvas.Height; y++)
+            for (int y = 0; y < canvas.Height; y++)
             {
                 int first = FindFirstTrueIndex(grid, y);
                 int last = FindLastTrueIndex(grid, y);
 
                 if (first != last)
                 {
-                    for(int x = first; x < last; x++)
+                    for (int x = first; x < last; x++)
                     {
-                        grid[x,y] = true;
+                        grid[x, y] = true;
                     }
                 }
             }
@@ -57,8 +57,8 @@
         {
             int dx = Math.Abs(x2 - x1);
             int dy = Math.Abs(y2 - y1);
-            int sx = (x1 < x2) ? 1 : -1;
-            int sy = (y1 < y2) ? 1 : -1;
+            int sx = x1 < x2 ? 1 : -1;
+            int sy = y1 < y2 ? 1 : -1;
 
             int err = dx - dy;
             int currentX = x1;
@@ -84,9 +84,9 @@
                 }
             }
         }
-        private static int FindFirstTrueIndex(bool[,] grid,int y)
+        private static int FindFirstTrueIndex(bool[,] grid, int y)
         {
-            for(int i = 0; i < grid.GetLength(1); i++)
+            for (int i = 0; i < grid.GetLength(1); i++)
             {
                 if (grid[i, y] == true) return i;
             }
@@ -94,7 +94,7 @@
         }
         private static int FindLastTrueIndex(bool[,] grid, int y)
         {
-            for (int i = grid.GetLength(1)-1; i >=1 ; i--)
+            for (int i = grid.GetLength(1) - 1; i >= 1; i--)
             {
                 if (grid[i, y] == true) return i;
             }

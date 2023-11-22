@@ -9,7 +9,7 @@ namespace E394KZ
         {
             if (ShapeParser.IsStringStartingWidthShape(input.ToLower())) ParseShape(input, shapeHistory, canvas);
 
-            else if (input == "undo") Undo(shapeHistory);
+            else if (input == "undo") Undo(shapeHistory, canvas);
             else if (input == "help") Help();
             else if (input == "clear") Clear(shapeHistory, canvas);
             else if (input == "stat") Stat(shapeHistory, canvas);
@@ -30,11 +30,13 @@ namespace E394KZ
             canvas.Draw(shape);
             shapeHistory.Add(shape);
         }
-        private static void Undo(ShapeHistory shapeHistory)
+        private static void Undo(ShapeHistory shapeHistory, Canvas canvas)
         {
             if (shapeHistory.Count > 0)
             {
                 shapeHistory.RemoveLast();
+                canvas.Clear();
+                canvas.Draw(shapeHistory);
             }
             else
             {

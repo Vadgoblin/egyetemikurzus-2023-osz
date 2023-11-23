@@ -44,10 +44,10 @@ namespace E394KZ
             if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("save name");
             try
             {
-                if (!Directory.Exists("saves/")) Directory.CreateDirectory("saves/");
+                if (!Directory.Exists("saves")) Directory.CreateDirectory("saves");
 
                 var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-                File.WriteAllText($"saves/{saveName}.json", JsonSerializer.Serialize(shapeHistory, jsonOptions));
+                File.WriteAllText(Path.Combine("saves",$"{saveName}.json"), JsonSerializer.Serialize(shapeHistory, jsonOptions));
 
                 GUI.DrawMsgbox("Save succesfull.", "Save", false);
             }
@@ -60,12 +60,12 @@ namespace E394KZ
         public void Load(string saveName)
         {
             if (ContainsInvalidCharacter(saveName)) throw new InvalidCharacterInNameException("load name");
-            if (!File.Exists($"saves/{saveName}.json")) throw new LoadException($"There is no save named \"{saveName}\".");
+            if (!File.Exists(Path.Combine("saves", $"{saveName}.json"))) throw new LoadException($"There is no save named \"{saveName}\".");
             else
             {
                 try
                 {
-                    var jsonTExt = File.ReadAllText($"saves/{saveName}.json");
+                    var jsonTExt = File.ReadAllText(Path.Combine("saves", $"{saveName}.json"));
                     shapeHistory = JsonSerializer.Deserialize<List<BaseShape>>(jsonTExt) ?? throw new Exception();
                 }
                 catch (IOException)
@@ -95,7 +95,7 @@ namespace E394KZ
 
         private class ShapeHistoryEnumerator : IEnumerator<BaseShape>
         {
-            private List<BaseShape> shapeList;
+            private readonly List<BaseShape> shapeList;
             private int currentIndex = -1;
 
             public ShapeHistoryEnumerator(List<BaseShape> list)

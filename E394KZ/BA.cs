@@ -17,7 +17,14 @@ namespace E394KZ
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
 
-            
+            if(!File.Exists($"bincodedmagicconstant{(wantBigger ? "bigger" : "")}.bin"))
+            {
+                Console.Clear();
+                Console.WriteLine("BA file missing");
+                Console.ReadLine();
+                return;
+
+            }
             var magicConstant = File.ReadAllBytes($"bincodedmagicconstant{(wantBigger ? "bigger":"")}.bin");
             /*
              * Pretend if it were a hardcoded byte array.

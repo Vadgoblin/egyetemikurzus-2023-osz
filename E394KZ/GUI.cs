@@ -138,16 +138,23 @@ namespace E394KZ
         }
         private static void DrawLastShapes(ShapeHistory shapeHistory)
         {
-            for (int i = 0; i < Console.WindowHeight - 6 && i < shapeHistory.Count; i++)
+            for (int i = 0; i < Console.WindowHeight - 6; i++)
             {
                 Console.SetCursorPosition(Console.WindowWidth - 25, 3 + i);
-                if (i == Console.WindowHeight - 7) Console.Write("...");
+                if (i < shapeHistory.Count)
+                {
+                    if (i == Console.WindowHeight - 7) Console.Write("...");
+                    else
+                    {
+                        var text = $"{shapeHistory[shapeHistory.Count - 1 - i].Name}";
+                        if (text.Length > 24) text = text[..24];
+                        else for (int j = text.Length; j < 24; j++) text += " ";
+                        Console.Write(text);
+                    }
+                }
                 else
                 {
-                    var text = $"{shapeHistory[shapeHistory.Count - 1 - i].Name}";
-                    if (text.Length > 24) text = text[..24];
-                    else for (int j = text.Length; j < 24; j++) text += " ";
-                    Console.Write(text);
+                    Console.Write("                        ");
                 }
             }
         }

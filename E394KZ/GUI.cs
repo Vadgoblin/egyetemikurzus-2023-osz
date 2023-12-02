@@ -339,7 +339,7 @@ namespace E394KZ
                 "    help: segítség megjelenítése",
                 "    clear: letörli a vászont",
                 "    stat: statisztika megjelenítése",
-                "    save {name}: alakzatok mengése {name} néven",
+                "    save {name}: alakzatok mentése {name} néven",
                 "    load {name}: {name} néven mentett alakzatok betöltése",
                 "    offset {x} {y}: megjelenítési eltolás megváltoztatása"
             };

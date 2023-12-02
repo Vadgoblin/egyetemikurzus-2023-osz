@@ -1,0 +1,5124 @@
+[
+  {
+    "$type": "rectangle",
+    "Width": 92,
+    "Height": 17,
+    "Name": "Grass",
+    "X": 0,
+    "Y": 35,
+    "Color": 10
+  },
+  {
+    "$type": "rectangle",
+    "Width": 92,
+    "Height": 35,
+    "Name": "Sky",
+    "X": 0,
+    "Y": 0,
+    "Color": 9
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_0",
+    "X": 24,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_1",
+    "X": 24,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_2",
+    "X": 24,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_3",
+    "X": 25,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_4",
+    "X": 25,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_5",
+    "X": 25,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_6",
+    "X": 25,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_7",
+    "X": 26,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_8",
+    "X": 26,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_9",
+    "X": 26,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_10",
+    "X": 26,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_11",
+    "X": 26,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_12",
+    "X": 26,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_13",
+    "X": 27,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_14",
+    "X": 27,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_15",
+    "X": 27,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_16",
+    "X": 27,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_17",
+    "X": 27,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_18",
+    "X": 27,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_19",
+    "X": 27,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_20",
+    "X": 28,
+    "Y": 0,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_21",
+    "X": 28,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_22",
+    "X": 28,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_23",
+    "X": 28,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_24",
+    "X": 28,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_25",
+    "X": 28,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_26",
+    "X": 28,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_27",
+    "X": 28,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_28",
+    "X": 28,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_29",
+    "X": 29,
+    "Y": 0,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_30",
+    "X": 29,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_31",
+    "X": 29,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_32",
+    "X": 29,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_33",
+    "X": 29,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_34",
+    "X": 29,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_35",
+    "X": 29,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_36",
+    "X": 29,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_37",
+    "X": 29,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_38",
+    "X": 30,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_39",
+    "X": 30,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_40",
+    "X": 30,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_41",
+    "X": 30,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_42",
+    "X": 30,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_43",
+    "X": 30,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_44",
+    "X": 30,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_45",
+    "X": 31,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_46",
+    "X": 31,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_47",
+    "X": 31,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_48",
+    "X": 31,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_49",
+    "X": 31,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_50",
+    "X": 31,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_51",
+    "X": 32,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_52",
+    "X": 32,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_53",
+    "X": 32,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_54",
+    "X": 32,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_55",
+    "X": 32,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_56",
+    "X": 33,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_57",
+    "X": 33,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_58",
+    "X": 33,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_59",
+    "X": 33,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_60",
+    "X": 33,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_61",
+    "X": 34,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_62",
+    "X": 34,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_63",
+    "X": 34,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_64",
+    "X": 34,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_65",
+    "X": 34,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_66",
+    "X": 35,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_67",
+    "X": 35,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_68",
+    "X": 46,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_69",
+    "X": 46,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_70",
+    "X": 46,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_71",
+    "X": 46,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_72",
+    "X": 47,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_73",
+    "X": 47,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_74",
+    "X": 47,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_75",
+    "X": 47,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_76",
+    "X": 47,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_77",
+    "X": 48,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_78",
+    "X": 48,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_79",
+    "X": 48,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_80",
+    "X": 48,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_81",
+    "X": 48,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_82",
+    "X": 48,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_83",
+    "X": 48,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_84",
+    "X": 49,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_85",
+    "X": 49,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_86",
+    "X": 49,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_87",
+    "X": 49,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_88",
+    "X": 49,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_89",
+    "X": 49,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_90",
+    "X": 49,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_91",
+    "X": 49,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_92",
+    "X": 49,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_93",
+    "X": 50,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_94",
+    "X": 50,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_95",
+    "X": 50,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_96",
+    "X": 50,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_97",
+    "X": 50,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_98",
+    "X": 50,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_99",
+    "X": 50,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_100",
+    "X": 50,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_101",
+    "X": 50,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_102",
+    "X": 50,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_103",
+    "X": 51,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_104",
+    "X": 51,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_105",
+    "X": 51,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_106",
+    "X": 51,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_107",
+    "X": 51,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_108",
+    "X": 51,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_109",
+    "X": 51,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_110",
+    "X": 51,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_111",
+    "X": 51,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_112",
+    "X": 52,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_113",
+    "X": 52,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_114",
+    "X": 52,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_115",
+    "X": 52,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_116",
+    "X": 52,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_117",
+    "X": 52,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_118",
+    "X": 52,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_119",
+    "X": 52,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_120",
+    "X": 52,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_121",
+    "X": 53,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_122",
+    "X": 53,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_123",
+    "X": 53,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_124",
+    "X": 53,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_125",
+    "X": 53,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_126",
+    "X": 53,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_127",
+    "X": 53,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_128",
+    "X": 53,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_129",
+    "X": 53,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_130",
+    "X": 53,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_131",
+    "X": 54,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_132",
+    "X": 54,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_133",
+    "X": 54,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_134",
+    "X": 54,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_135",
+    "X": 54,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_136",
+    "X": 54,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_137",
+    "X": 54,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_138",
+    "X": 54,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_139",
+    "X": 54,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_140",
+    "X": 54,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_141",
+    "X": 54,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_142",
+    "X": 55,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_143",
+    "X": 55,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_144",
+    "X": 55,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_145",
+    "X": 55,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_146",
+    "X": 55,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_147",
+    "X": 55,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_148",
+    "X": 55,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_149",
+    "X": 55,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_150",
+    "X": 55,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_151",
+    "X": 55,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_152",
+    "X": 55,
+    "Y": 12,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_153",
+    "X": 56,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_154",
+    "X": 56,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_155",
+    "X": 56,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_156",
+    "X": 56,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_157",
+    "X": 56,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_158",
+    "X": 56,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_159",
+    "X": 56,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_160",
+    "X": 56,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_161",
+    "X": 56,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_162",
+    "X": 56,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_163",
+    "X": 56,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_164",
+    "X": 56,
+    "Y": 12,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_165",
+    "X": 57,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_166",
+    "X": 57,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_167",
+    "X": 57,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_168",
+    "X": 57,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_169",
+    "X": 57,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_170",
+    "X": 57,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_171",
+    "X": 57,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_172",
+    "X": 57,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_173",
+    "X": 58,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_174",
+    "X": 58,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_175",
+    "X": 58,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_176",
+    "X": 58,
+    "Y": 10,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_177",
+    "X": 58,
+    "Y": 11,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_178",
+    "X": 59,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_179",
+    "X": 59,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_180",
+    "X": 69,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_181",
+    "X": 69,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_182",
+    "X": 69,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_183",
+    "X": 70,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_184",
+    "X": 70,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_185",
+    "X": 70,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_186",
+    "X": 70,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_187",
+    "X": 70,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_188",
+    "X": 70,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_189",
+    "X": 70,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_190",
+    "X": 71,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_191",
+    "X": 71,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_192",
+    "X": 71,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_193",
+    "X": 71,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_194",
+    "X": 71,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_195",
+    "X": 71,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_196",
+    "X": 71,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_197",
+    "X": 72,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_198",
+    "X": 72,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_199",
+    "X": 72,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_200",
+    "X": 72,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_201",
+    "X": 72,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_202",
+    "X": 72,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_203",
+    "X": 72,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_204",
+    "X": 72,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_205",
+    "X": 73,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_206",
+    "X": 73,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_207",
+    "X": 73,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_208",
+    "X": 73,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_209",
+    "X": 73,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_210",
+    "X": 73,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_211",
+    "X": 73,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_212",
+    "X": 73,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_213",
+    "X": 74,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_214",
+    "X": 74,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_215",
+    "X": 74,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_216",
+    "X": 74,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_217",
+    "X": 74,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_218",
+    "X": 74,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_219",
+    "X": 74,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_220",
+    "X": 74,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_221",
+    "X": 75,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_222",
+    "X": 75,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_223",
+    "X": 75,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_224",
+    "X": 75,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_225",
+    "X": 75,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_226",
+    "X": 75,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_227",
+    "X": 75,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_228",
+    "X": 75,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_229",
+    "X": 75,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_230",
+    "X": 76,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_231",
+    "X": 76,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_232",
+    "X": 76,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_233",
+    "X": 76,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_234",
+    "X": 76,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_235",
+    "X": 76,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_236",
+    "X": 76,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_237",
+    "X": 76,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_238",
+    "X": 76,
+    "Y": 9,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_239",
+    "X": 77,
+    "Y": 1,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_240",
+    "X": 77,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_241",
+    "X": 77,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_242",
+    "X": 77,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_243",
+    "X": 77,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_244",
+    "X": 77,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_245",
+    "X": 77,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_246",
+    "X": 77,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_247",
+    "X": 78,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_248",
+    "X": 78,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_249",
+    "X": 78,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_250",
+    "X": 78,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_251",
+    "X": 78,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_252",
+    "X": 78,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_253",
+    "X": 78,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_254",
+    "X": 79,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_255",
+    "X": 79,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_256",
+    "X": 79,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_257",
+    "X": 79,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_258",
+    "X": 79,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_259",
+    "X": 79,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_260",
+    "X": 79,
+    "Y": 8,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_261",
+    "X": 80,
+    "Y": 2,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_262",
+    "X": 80,
+    "Y": 3,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_263",
+    "X": 80,
+    "Y": 4,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_264",
+    "X": 80,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_265",
+    "X": 80,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_266",
+    "X": 80,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_267",
+    "X": 81,
+    "Y": 5,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_268",
+    "X": 81,
+    "Y": 6,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Sky_269",
+    "X": 81,
+    "Y": 7,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_0",
+    "X": 10,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_1",
+    "X": 10,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_2",
+    "X": 10,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_3",
+    "X": 11,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_4",
+    "X": 11,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_5",
+    "X": 11,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_6",
+    "X": 11,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_7",
+    "X": 11,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_8",
+    "X": 12,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_9",
+    "X": 12,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_10",
+    "X": 12,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_11",
+    "X": 12,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_12",
+    "X": 12,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_13",
+    "X": 13,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_14",
+    "X": 13,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_15",
+    "X": 13,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_16",
+    "X": 13,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_17",
+    "X": 13,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_18",
+    "X": 13,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_19",
+    "X": 14,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_20",
+    "X": 14,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_21",
+    "X": 14,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_22",
+    "X": 14,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_23",
+    "X": 14,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_24",
+    "X": 14,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_25",
+    "X": 14,
+    "Y": 44,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_26",
+    "X": 15,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_27",
+    "X": 15,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_28",
+    "X": 15,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_29",
+    "X": 15,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_30",
+    "X": 15,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_31",
+    "X": 15,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_32",
+    "X": 15,
+    "Y": 44,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_33",
+    "X": 16,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_34",
+    "X": 16,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_35",
+    "X": 16,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_36",
+    "X": 16,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_37",
+    "X": 16,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_38",
+    "X": 16,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_39",
+    "X": 16,
+    "Y": 44,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_40",
+    "X": 17,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_41",
+    "X": 17,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_42",
+    "X": 17,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_43",
+    "X": 17,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_44",
+    "X": 17,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_45",
+    "X": 17,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_46",
+    "X": 17,
+    "Y": 44,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_47",
+    "X": 18,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_48",
+    "X": 18,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_49",
+    "X": 18,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_50",
+    "X": 18,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_51",
+    "X": 18,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_52",
+    "X": 18,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_53",
+    "X": 18,
+    "Y": 44,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_54",
+    "X": 19,
+    "Y": 38,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_55",
+    "X": 19,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_56",
+    "X": 19,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_57",
+    "X": 19,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_58",
+    "X": 19,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_59",
+    "X": 19,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_60",
+    "X": 20,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_61",
+    "X": 20,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_62",
+    "X": 20,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_63",
+    "X": 20,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_64",
+    "X": 20,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_65",
+    "X": 21,
+    "Y": 39,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_66",
+    "X": 21,
+    "Y": 40,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_67",
+    "X": 21,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_68",
+    "X": 21,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_69",
+    "X": 21,
+    "Y": 43,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_70",
+    "X": 22,
+    "Y": 41,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Lake_71",
+    "X": 22,
+    "Y": 42,
+    "Color": 1
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_0",
+    "X": 21,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_1",
+    "X": 21,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_2",
+    "X": 22,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_3",
+    "X": 22,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_4",
+    "X": 22,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_5",
+    "X": 22,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_6",
+    "X": 23,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_7",
+    "X": 23,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_8",
+    "X": 23,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_9",
+    "X": 23,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_10",
+    "X": 23,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_11",
+    "X": 23,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_12",
+    "X": 23,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_13",
+    "X": 24,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_14",
+    "X": 24,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_15",
+    "X": 24,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_16",
+    "X": 24,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_17",
+    "X": 24,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_18",
+    "X": 24,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_19",
+    "X": 24,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_20",
+    "X": 24,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_21",
+    "X": 25,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_22",
+    "X": 25,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_23",
+    "X": 25,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_24",
+    "X": 25,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_25",
+    "X": 25,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_26",
+    "X": 25,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_27",
+    "X": 25,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_28",
+    "X": 25,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_29",
+    "X": 25,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_30",
+    "X": 25,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_31",
+    "X": 26,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_32",
+    "X": 26,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_33",
+    "X": 26,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_34",
+    "X": 26,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_35",
+    "X": 26,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_36",
+    "X": 26,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_37",
+    "X": 26,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_38",
+    "X": 26,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_39",
+    "X": 26,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_40",
+    "X": 26,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_41",
+    "X": 26,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_42",
+    "X": 27,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_43",
+    "X": 27,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_44",
+    "X": 27,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_45",
+    "X": 27,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_46",
+    "X": 27,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_47",
+    "X": 27,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_48",
+    "X": 27,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_49",
+    "X": 27,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_50",
+    "X": 27,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_51",
+    "X": 27,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_52",
+    "X": 27,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_53",
+    "X": 27,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_54",
+    "X": 27,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_55",
+    "X": 27,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_56",
+    "X": 28,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_57",
+    "X": 28,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_58",
+    "X": 28,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_59",
+    "X": 28,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_60",
+    "X": 28,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_61",
+    "X": 28,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_62",
+    "X": 28,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_63",
+    "X": 28,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_64",
+    "X": 28,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_65",
+    "X": 28,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_66",
+    "X": 28,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_67",
+    "X": 28,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_68",
+    "X": 28,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_69",
+    "X": 28,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_70",
+    "X": 29,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_71",
+    "X": 29,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_72",
+    "X": 29,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_73",
+    "X": 29,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_74",
+    "X": 29,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_75",
+    "X": 29,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_76",
+    "X": 29,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_77",
+    "X": 29,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_78",
+    "X": 29,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_79",
+    "X": 29,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_80",
+    "X": 29,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_81",
+    "X": 29,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_82",
+    "X": 29,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_83",
+    "X": 29,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_84",
+    "X": 29,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_85",
+    "X": 30,
+    "Y": 18,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_86",
+    "X": 30,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_87",
+    "X": 30,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_88",
+    "X": 30,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_89",
+    "X": 30,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_90",
+    "X": 30,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_91",
+    "X": 30,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_92",
+    "X": 30,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_93",
+    "X": 30,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_94",
+    "X": 30,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_95",
+    "X": 30,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_96",
+    "X": 30,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_97",
+    "X": 30,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_98",
+    "X": 30,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_99",
+    "X": 30,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_100",
+    "X": 30,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_101",
+    "X": 30,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_102",
+    "X": 31,
+    "Y": 17,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_103",
+    "X": 31,
+    "Y": 18,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_104",
+    "X": 31,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_105",
+    "X": 31,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_106",
+    "X": 31,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_107",
+    "X": 31,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_108",
+    "X": 31,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_109",
+    "X": 31,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_110",
+    "X": 31,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_111",
+    "X": 31,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_112",
+    "X": 31,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_113",
+    "X": 31,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_114",
+    "X": 31,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_115",
+    "X": 31,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_116",
+    "X": 31,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_117",
+    "X": 31,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_118",
+    "X": 31,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_119",
+    "X": 31,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_120",
+    "X": 32,
+    "Y": 17,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_121",
+    "X": 32,
+    "Y": 18,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_122",
+    "X": 32,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_123",
+    "X": 32,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_124",
+    "X": 32,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_125",
+    "X": 32,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_126",
+    "X": 32,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_127",
+    "X": 32,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_128",
+    "X": 32,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_129",
+    "X": 32,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_130",
+    "X": 32,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_131",
+    "X": 32,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_132",
+    "X": 32,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_133",
+    "X": 32,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_134",
+    "X": 32,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_135",
+    "X": 32,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_136",
+    "X": 32,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_137",
+    "X": 32,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_138",
+    "X": 33,
+    "Y": 18,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_139",
+    "X": 33,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_140",
+    "X": 33,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_141",
+    "X": 33,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_142",
+    "X": 33,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_143",
+    "X": 33,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_144",
+    "X": 33,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_145",
+    "X": 33,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_146",
+    "X": 33,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_147",
+    "X": 33,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_148",
+    "X": 33,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_149",
+    "X": 33,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_150",
+    "X": 33,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_151",
+    "X": 33,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_152",
+    "X": 33,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_153",
+    "X": 33,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_154",
+    "X": 33,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_155",
+    "X": 34,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_156",
+    "X": 34,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_157",
+    "X": 34,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_158",
+    "X": 34,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_159",
+    "X": 34,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_160",
+    "X": 34,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_161",
+    "X": 34,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_162",
+    "X": 34,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_163",
+    "X": 34,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_164",
+    "X": 34,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_165",
+    "X": 34,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_166",
+    "X": 34,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_167",
+    "X": 34,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_168",
+    "X": 34,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_169",
+    "X": 34,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_170",
+    "X": 34,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_171",
+    "X": 35,
+    "Y": 19,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_172",
+    "X": 35,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_173",
+    "X": 35,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_174",
+    "X": 35,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_175",
+    "X": 35,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_176",
+    "X": 35,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_177",
+    "X": 35,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_178",
+    "X": 35,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_179",
+    "X": 35,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_180",
+    "X": 35,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_181",
+    "X": 35,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_182",
+    "X": 35,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_183",
+    "X": 35,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_184",
+    "X": 35,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_185",
+    "X": 35,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_186",
+    "X": 35,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_187",
+    "X": 36,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_188",
+    "X": 36,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_189",
+    "X": 36,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_190",
+    "X": 36,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_191",
+    "X": 36,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_192",
+    "X": 36,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_193",
+    "X": 36,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_194",
+    "X": 36,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_195",
+    "X": 36,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_196",
+    "X": 36,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_197",
+    "X": 36,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_198",
+    "X": 36,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_199",
+    "X": 36,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_200",
+    "X": 36,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_201",
+    "X": 36,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_202",
+    "X": 37,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_203",
+    "X": 37,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_204",
+    "X": 37,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_205",
+    "X": 37,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_206",
+    "X": 37,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_207",
+    "X": 37,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_208",
+    "X": 37,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_209",
+    "X": 37,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_210",
+    "X": 37,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_211",
+    "X": 37,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_212",
+    "X": 37,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_213",
+    "X": 37,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_214",
+    "X": 37,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_215",
+    "X": 37,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_216",
+    "X": 38,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_217",
+    "X": 38,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_218",
+    "X": 38,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_219",
+    "X": 38,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_220",
+    "X": 38,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_221",
+    "X": 38,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_222",
+    "X": 38,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_223",
+    "X": 38,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_224",
+    "X": 38,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_225",
+    "X": 38,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_226",
+    "X": 38,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_227",
+    "X": 38,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_228",
+    "X": 38,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_229",
+    "X": 38,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_230",
+    "X": 39,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_231",
+    "X": 39,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_232",
+    "X": 39,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_233",
+    "X": 39,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_234",
+    "X": 39,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_235",
+    "X": 39,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_236",
+    "X": 39,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_237",
+    "X": 39,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_238",
+    "X": 39,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_239",
+    "X": 39,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_240",
+    "X": 39,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_241",
+    "X": 39,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_242",
+    "X": 39,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_243",
+    "X": 39,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_244",
+    "X": 40,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_245",
+    "X": 40,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_246",
+    "X": 40,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_247",
+    "X": 40,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_248",
+    "X": 40,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_249",
+    "X": 40,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_250",
+    "X": 40,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_251",
+    "X": 40,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_252",
+    "X": 40,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_253",
+    "X": 40,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_254",
+    "X": 40,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_255",
+    "X": 40,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_256",
+    "X": 40,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_257",
+    "X": 40,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_258",
+    "X": 41,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_259",
+    "X": 41,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_260",
+    "X": 41,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_261",
+    "X": 41,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_262",
+    "X": 41,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_263",
+    "X": 41,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_264",
+    "X": 41,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_265",
+    "X": 41,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_266",
+    "X": 41,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_267",
+    "X": 41,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_268",
+    "X": 41,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_269",
+    "X": 41,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_270",
+    "X": 41,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_271",
+    "X": 41,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_272",
+    "X": 42,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_273",
+    "X": 42,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_274",
+    "X": 42,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_275",
+    "X": 42,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_276",
+    "X": 42,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_277",
+    "X": 42,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_278",
+    "X": 42,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_279",
+    "X": 42,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_280",
+    "X": 42,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_281",
+    "X": 42,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_282",
+    "X": 42,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_283",
+    "X": 42,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_284",
+    "X": 42,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_285",
+    "X": 42,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_286",
+    "X": 43,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_287",
+    "X": 43,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_288",
+    "X": 43,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_289",
+    "X": 43,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_290",
+    "X": 43,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_291",
+    "X": 43,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_292",
+    "X": 43,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_293",
+    "X": 43,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_294",
+    "X": 43,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_295",
+    "X": 43,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_296",
+    "X": 43,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_297",
+    "X": 43,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_298",
+    "X": 43,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_299",
+    "X": 43,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_300",
+    "X": 44,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_301",
+    "X": 44,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_302",
+    "X": 44,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_303",
+    "X": 44,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_304",
+    "X": 44,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_305",
+    "X": 44,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_306",
+    "X": 44,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_307",
+    "X": 44,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_308",
+    "X": 44,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_309",
+    "X": 44,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_310",
+    "X": 44,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_311",
+    "X": 44,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_312",
+    "X": 44,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_313",
+    "X": 44,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_314",
+    "X": 44,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_315",
+    "X": 45,
+    "Y": 20,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_316",
+    "X": 45,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_317",
+    "X": 45,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_318",
+    "X": 45,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_319",
+    "X": 45,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_320",
+    "X": 45,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_321",
+    "X": 45,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_322",
+    "X": 45,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_323",
+    "X": 45,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_324",
+    "X": 45,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_325",
+    "X": 45,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_326",
+    "X": 45,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_327",
+    "X": 45,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_328",
+    "X": 45,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_329",
+    "X": 45,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_330",
+    "X": 46,
+    "Y": 21,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_331",
+    "X": 46,
+    "Y": 22,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_332",
+    "X": 46,
+    "Y": 23,
+    "Color": 15
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_333",
+    "X": 46,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_334",
+    "X": 46,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_335",
+    "X": 46,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_336",
+    "X": 46,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_337",
+    "X": 46,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_338",
+    "X": 46,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_339",
+    "X": 46,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_340",
+    "X": 46,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_341",
+    "X": 46,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_342",
+    "X": 46,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_343",
+    "X": 46,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_344",
+    "X": 47,
+    "Y": 24,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_345",
+    "X": 47,
+    "Y": 25,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_346",
+    "X": 47,
+    "Y": 26,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_347",
+    "X": 47,
+    "Y": 27,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_348",
+    "X": 47,
+    "Y": 28,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_349",
+    "X": 47,
+    "Y": 29,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_350",
+    "X": 47,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_351",
+    "X": 47,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_352",
+    "X": 47,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_353",
+    "X": 47,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_354",
+    "X": 47,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_355",
+    "X": 48,
+    "Y": 30,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_356",
+    "X": 48,
+    "Y": 31,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_357",
+    "X": 48,
+    "Y": 32,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_358",
+    "X": 48,
+    "Y": 33,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_359",
+    "X": 48,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Mountain_360",
+    "X": 49,
+    "Y": 34,
+    "Color": 8
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_0",
+    "X": 2,
+    "Y": 39,
+    "Color": 14
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_1",
+    "X": 2,
+    "Y": 46,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_2",
+    "X": 7,
+    "Y": 38,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_3",
+    "X": 10,
+    "Y": 45,
+    "Color": 14
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_4",
+    "X": 26,
+    "Y": 44,
+    "Color": 14
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_5",
+    "X": 27,
+    "Y": 39,
+    "Color": 14
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_6",
+    "X": 33,
+    "Y": 38,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_7",
+    "X": 33,
+    "Y": 44,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_8",
+    "X": 39,
+    "Y": 43,
+    "Color": 14
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_9",
+    "X": 43,
+    "Y": 39,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_10",
+    "X": 43,
+    "Y": 42,
+    "Color": 12
+  },
+  {
+    "$type": "dot",
+    "Name": "Flower_11",
+    "X": 49,
+    "Y": 48,
+    "Color": 12
+  },
+  {
+    "$type": "circle",
+    "Radius": 6,
+    "Name": "Sun",
+    "X": 9,
+    "Y": 9,
+    "Color": 14
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 46,
+    "V2X": 85,
+    "V2Y": 24,
+    "V3X": 85,
+    "V3Y": 37,
+    "Name": "Shady_side_of_house_1",
+    "X": 63,
+    "Y": 46,
+    "Color": 8
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 46,
+    "V2X": 63,
+    "V2Y": 33,
+    "V3X": 85,
+    "V3Y": 24,
+    "Name": "Shady_side_of_house_2",
+    "X": 63,
+    "Y": 46,
+    "Color": 8
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 33,
+    "V2X": 54,
+    "V2Y": 27,
+    "V3X": 54,
+    "V3Y": 40,
+    "Name": "Sunny_side_of_house_1",
+    "X": 63,
+    "Y": 33,
+    "Color": 7
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 46,
+    "V2X": 63,
+    "V2Y": 33,
+    "V3X": 54,
+    "V3Y": 40,
+    "Name": "Sunny_side_of_house_2",
+    "X": 63,
+    "Y": 46,
+    "Color": 7
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 32,
+    "V2X": 54,
+    "V2Y": 26,
+    "V3X": 60,
+    "V3Y": 22,
+    "Name": "Roof_sunnt_side",
+    "X": 63,
+    "Y": 32,
+    "Color": 12
+  },
+  {
+    "$type": "triangle",
+    "V1X": 63,
+    "V1Y": 32,
+    "V2X": 60,
+    "V2Y": 22,
+    "V3X": 85,
+    "V3Y": 23,
+    "Name": "Roof_shady_side_1",
+    "X": 63,
+    "Y": 32,
+    "Color": 4
+  },
+  {
+    "$type": "triangle",
+    "V1X": 81,
+    "V1Y": 12,
+    "V2X": 85,
+    "V2Y": 23,
+    "V3X": 60,
+    "V3Y": 22,
+    "Name": "Roof_shady_side_2",
+    "X": 81,
+    "Y": 12,
+    "Color": 4
+  }
+]

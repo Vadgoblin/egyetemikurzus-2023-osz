@@ -18,7 +18,6 @@ namespace E394KZ
             else if (input.StartsWith("load")) Load(input, shapeHistory, canvas);
             else if (input.StartsWith("offset")) Offset(input, canvas);
 
-            else if (input == "ba") Ba(canvas);
             else if (input == "q" || input == "quit" || input == "exit") Environment.Exit(0);
 
             else GUI.DrawMsgbox($"Unknown command: \"{input}\"", "Input error");
@@ -94,11 +93,6 @@ namespace E394KZ
             else if (canvas.Height < y + Console.WindowHeight - 4) y = (uint)canvas.Height - ((uint)Console.WindowHeight - 4);
 
             GUI.ChangeOffset(x, y);
-            Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
-        }
-        private static void Ba(Canvas canvas)
-        {
-            BA.Start();
             Console.Title = $"Offset: {GUI.Xoffset}x{GUI.Yoffset}, Canvas size: {canvas.Width}x{canvas.Height}";
         }
     }
